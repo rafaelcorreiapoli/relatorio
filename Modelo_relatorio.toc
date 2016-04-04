@@ -1,12 +1,18 @@
 \select@language {brazil}
 \contentsline {section}{\numberline {1}Introdu\c c\~ao}{1}
-\contentsline {section}{\numberline {2}Exemplos de Equa\c c\~oes}{1}
-\contentsline {subsection}{\numberline {2.1}Equa\c c\~oes simples}{1}
-\contentsline {subsection}{\numberline {2.2}Equa\c c\~oes com mais de uma linha}{2}
-\contentsline {subsection}{\numberline {2.3}Sistema linear}{2}
-\contentsline {section}{\numberline {3}Tabelas}{3}
-\contentsline {subsection}{\numberline {3.1}Tabela Simples}{3}
-\contentsline {subsection}{\numberline {3.2}Tabela mais elaborada}{3}
-\contentsline {section}{\numberline {4}Edi\c c\~ao}{3}
-\contentsline {section}{\numberline {5}Inserir figuras}{3}
-\contentsline {section}{\numberline {6}Conclus\~oes}{4}
+\contentsline {section}{\numberline {2}EDOs e Condi\c c\~oes Inicias}{2}
+\contentsline {section}{\numberline {3}Metodologias}{2}
+\contentsline {section}{\numberline {4}An\'alise}{2}
+\contentsline {section}{\numberline {5}Spline}{2}
+\contentsline {section}{\numberline {6}Conclus\~ao}{2}
+\contentsline {section}{\numberline {7}Ap\^endice}{2}
+\contentsline {section}{\numberline {8}Exemplos de Equa\c c\~oes}{2}
+\contentsline {subsection}{\numberline {8.1}Equa\c c\~oes simples}{2}
+\contentsline {subsection}{\numberline {8.2}Equa\c c\~oes com mais de uma linha}{2}
+\contentsline {subsection}{\numberline {8.3}Sistema linear}{3}
+\contentsline {section}{\numberline {9}Tabelas}{4}
+\contentsline {subsection}{\numberline {9.1}Tabela Simples}{4}
+\contentsline {subsection}{\numberline {9.2}Tabela mais elaborada}{4}
+\contentsline {section}{\numberline {10}Edi\c c\~ao}{4}
+\contentsline {section}{\numberline {11}Inserir figuras}{4}
+\contentsline {section}{\numberline {12}Conclus\~oes}{5}
