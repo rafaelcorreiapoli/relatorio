@@ -265,6 +265,9 @@ Para condicoes iniciais nulas, $x_0 = 0$, $y_0 = 0$, $z_0 = 0$, o sistema perman
 
     É importante notar que apresentaremos apenas um gráfico para cada intervalo de tempo (apesar de termos duas metodologias) pois os resultados foram extremamente parecidos.
     
+    \item Vermelho: (x, y)
+    \item Azul: (x, z)
+    
 		    \textbf{$0 < t < 1$}\par\medskip
 		    \includegraphics[scale=0.4]{images/0-t-1}
 
@@ -320,6 +323,13 @@ Para condicoes iniciais nulas, $x_0 = 0$, $y_0 = 0$, $z_0 = 0$, o sistema perman
     Temos que a ordem de convergência do método de Runge-Kutta Clássico é 4
         
 \section{Splines}
+Nesta seção, vamos utilizar o spline como etapa de pós processamento, no intuito de observar a forma da curva gerada pelas tabelas de 1 a 7 (na qual $0 < t < 2 )$.
+
+Para tanto, foi utilizada a função "splin" do SciLab, para cada variável x, y e z em relação ao tempo. Tal implementação e seu código estão mais bem explicados no Apêndice A - Splines.
+
+
+Vale ressaltar que o código gerou uma curva suave (Spline cúbica) com os pontos iniciais e finais para o período em questão. O Spline é um método de boa precisão na interpolação de pontos, para uma boa visualização de gráficos gerados por tabelas.
+
 
 		  \textbf{(t, x)}\par\medskip
 		  \includegraphics[scale=0.4]{images/spline-x}
