@@ -5,9 +5,9 @@
 \contentsline {subsection}{\numberline {3.1}Euler}{4}
 \contentsline {subsubsection}{\numberline {3.1.1}Algoritmo}{4}
 \contentsline {subsubsection}{\numberline {3.1.2}Discretiza\c c\~ao}{4}
-\contentsline {subsection}{\numberline {3.2}Runge-Kutta}{4}
-\contentsline {subsubsection}{\numberline {3.2.1}Algoritmo}{4}
-\contentsline {subsubsection}{\numberline {3.2.2}Discretiza\c c\~ao}{5}
+\contentsline {subsection}{\numberline {3.2}Runge-Kutta}{5}
+\contentsline {subsubsection}{\numberline {3.2.1}Algoritmo}{5}
+\contentsline {subsubsection}{\numberline {3.2.2}Discretiza\c c\~ao}{6}
 \contentsline {section}{\numberline {4}An\'alise}{6}
 \contentsline {subsection}{\numberline {4.1}Tabela de RK}{6}
 \contentsline {subsection}{\numberline {4.2}Gr\'aficos de RK}{11}
@@ -17,3 +17,4 @@
 \contentsline {section}{\numberline {7}Ap\^endice}{19}
 \contentsline {subsection}{\numberline {7.1}Defini\c c\~ao Spline}{19}
 \contentsline {subsection}{\numberline {7.2}Algoritmo Spline C\'ubico}{19}
+\contentsline {subsection}{\numberline {7.3}O Modelo de Lorentz}{23}

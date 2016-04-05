@@ -179,6 +179,7 @@ Para condicoes iniciais nulas, $x_0 = 0$, $y_0 = 0$, $z_0 = 0$, o sistema perman
       \label{eqpc0}
     \end{equation}      
      
+  \clearpage
   \subsection{Runge-Kutta}
     \subsubsection{Algoritmo}
       \begin{verbatim}
@@ -194,7 +195,8 @@ Para condicoes iniciais nulas, $x_0 = 0$, $y_0 = 0$, $z_0 = 0$, o sistema perman
 	  y(i+1,:) = y(i,:)+phi*h
 	end
       \end{verbatim}
-
+  
+    \clearpage
     \subsubsection{Discretização}    
       $\frac{dx}{dt} = -10x -10y$
       
@@ -299,7 +301,7 @@ Para condicoes iniciais nulas, $x_0 = 0$, $y_0 = 0$, $z_0 = 0$, o sistema perman
     		  \textbf{Gráfico de (x,t)}\par\medskip
 		  \includegraphics[scale=0.4]{images/manu-euler}
   
-    \item Vermelho: Aproximação RK
+    \item Vermelho: Aproximação Euler
     \item Azul: Solução Manufaturada
     
     Temos que a ordem de convergência do método de Euler Explícito é 1
@@ -374,7 +376,18 @@ O estudo destas equações, além de ter despertado o interesse na aplicação de mét
 
   \subsection {Algoritmo Spline Cúbico}
   \input {algoritmo_spline}
-
+  
+  \subsection{O Modelo de Lorentz}
+  
+  O Atractor de Lorenz foi introduzido por Edward Lorenz em 1963, que o derivou a partir das equações simplificadas de rolos de convecção que ocorrem nas equações da atmosfera.
+  
+  É um mapa caótico que mostra como o estado de um sistema dinâmico evolui no tempo num padrão complexo, não-repetitivo e cuja forma é conhecida por se assemelhar a uma borboleta.
+  
+  Trata-se de um sistema não-linear, tridimensional e determinístico que exibe comportamento caótico e demonstra aquilo a que hoje se chama um atractor estranho. 
+  
+  As equações do modelo de Lorenz introduzidas são desenvolvidas a partir da equação de escoamento Navier-Stokes e a equação que descreve a difusão da energia térmica. 
+  
+  A dedução do modelo não está no escopo do trabalho, uma vez que ela é derivada de várias simplificações e conjecturas modeladas.
 
 
 \end{document} %finaliza o documento
