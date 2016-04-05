@@ -13,8 +13,8 @@
 \contentsline {subsection}{\numberline {4.2}Gr\'aficos de RK}{11}
 \contentsline {subsection}{\numberline {4.3}Solu\c c\~ao Manufaturada}{14}
 \contentsline {section}{\numberline {5}Splines}{15}
-\contentsline {section}{\numberline {6}Conclus\~oes}{17}
-\contentsline {section}{\numberline {7}Ap\^endice}{19}
-\contentsline {subsection}{\numberline {7.1}Defini\c c\~ao Spline}{19}
-\contentsline {subsection}{\numberline {7.2}Algoritmo Spline C\'ubico}{19}
-\contentsline {subsection}{\numberline {7.3}O Modelo de Lorentz}{23}
+\contentsline {section}{\numberline {6}Conclus\~oes}{18}
+\contentsline {section}{\numberline {7}Ap\^endice}{20}
+\contentsline {subsection}{\numberline {7.1}Defini\c c\~ao Spline}{20}
+\contentsline {subsection}{\numberline {7.2}Algoritmo Spline C\'ubico}{20}
+\contentsline {subsection}{\numberline {7.3}O Modelo de Lorentz}{24}
