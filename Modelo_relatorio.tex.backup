@@ -127,9 +127,7 @@ $\frac{dy}{dt} = 28x - y - xz$
 $\frac{dz}{dt}  = xy - \frac{8}{3}z$
 
 Discretização Euler
-
-
-$\Delta t = \frac{t_f - t_i}{n}$
+$r_a$
 % \include {tabela_rungekutta}
 
 
