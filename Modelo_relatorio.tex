@@ -105,6 +105,14 @@ Todos os $\sigma, \rho, \beta > 0$, mas usualmente $\sigma = 10$, $\beta = \frac
 
 O sistema exibe comportamento caótico para $\rho = 28$ mas tem órbitas periódicas para outros valores de $\rho$.
 
+\textbf{Condições Iniciais}
+
+$x_0 = 0$
+
+$y_0 = 0$
+
+$z_0 = 10$
+
 \section{Metodologias}
   \subsection{Euler}
     \subsubsection{Algoritmo}
@@ -186,7 +194,15 @@ O sistema exibe comportamento caótico para $\rho = 28$ mas tem órbitas periódica
       \end{array} \right]
       \label{eqpc0}
     \end{equation} 
-
+    
+  \textbf{Solução Manufaturada}
+  
+    $x(t) = -\frac{y}{10} e^(-10t) + \frac{y}{10}$
+    
+    $y(t) = (-28x + xz)e^(-t) + 28x -xz$
+    
+    $z(t) = 10 + xyt - \frac{8}{3}y*t$
+    
   \subsubsection {Tabela}
      \include{tabela_euler}
 
@@ -224,7 +240,17 @@ O sistema exibe comportamento caótico para $\rho = 28$ mas tem órbitas periódica
 		  \textbf{$0 < t < 128$}\par\medskip
 		  \includegraphics[scale=0.4]{images/0-t-128}			  
       
-\section{Spline}
+\section{Splines}
+
+		  \textbf{(t, x)}\par\medskip
+		  \includegraphics[scale=0.4]{images/spline-x}
+		  
+		  \textbf{(t, y)}\par\medskip
+		  \includegraphics[scale=0.4]{images/spline-y}
+		  
+		  \clearpage
+		  \textbf{(t, z)}\par\medskip
+		  \includegraphics[scale=0.4]{images/spline-z}		  
 
 
 
