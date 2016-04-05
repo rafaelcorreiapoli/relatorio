@@ -127,7 +127,47 @@ $\frac{dy}{dt} = 28x - y - xz$
 $\frac{dz}{dt}  = xy - \frac{8}{3}z$
 
 Discretização Euler
-$r_a$
+
+
+$\Delta t = \frac{t_f - t_i}{n}$
+
+Aplicando nas Equações
+
+$x_{\text{k+1}} = x_k + h(-10x_k + 10y_k)$
+
+$y_{\text{k+1}} = x_k + h(28x_k - y_k - x_kz_k)$
+
+$z_{\text{k+1}} = z_k + h(x_ky_k - \frac{8}{3}y_k)$
+
+
+Matriz
+
+\begin{equation}
+ \left[
+\begin{array}{ccc}
+ A & 0   & 0 \\
+ 0 & A^T & I\\
+ Z & 0   & X
+\end{array} \right]
+\left[
+\begin{array}{c}
+ x \\
+ y \\
+ z \\
+\end{array}
+\right]
+=
+\left[
+\begin{array}{c}
+ 1 \\
+ 2 \\
+ 3
+\end{array}
+\right]
+\label{eqpc0}
+\end{equation} 
+
+
 % \include {tabela_rungekutta}
 
 

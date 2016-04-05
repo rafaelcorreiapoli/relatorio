@@ -89,50 +89,92 @@ usuários de Windows. Eu uso o {\it Kile}. O para windows eu não conheço. Consta 
 A seguir apresentaremos os gráficos obtidos a partir da resolução das equações diferenciais pelas metodologias aprensentadas no item anterior.
 
 É importante notar que apresentamos apenas um gráfico para cada intervalo de tempo (apesar de termos duas metodologias) pois os resultados foram extremamente parecidos.
-\subsection{$0 < t < 1$}
-
-  \includegraphics[scale=0.5]{images/0-t-1}
 
 
-\subsection{$0 < t < 2$}
-  \includegraphics[scale=0.5]{images/0-t-2}
+      
+\subsection {Euler}
+  \subsubsection {Equações}
+    \textbf{Equações Euler}
 
-\subsection{$0 < t < 4$}
-  \includegraphics[scale=0.5]{images/0-t-4}
+    $\frac{dx}{dt}  = -10x + 10y$
 
-\subsection{$0 < t < 8$}
-  \includegraphics[scale=0.5]{images/0-t-8}
+    $\frac{dy}{dt} = 28x - y - xz$
 
-\subsection{$0 < t < 16$}
-  \includegraphics[scale=0.5]{images/0-t-16}
+    $\frac{dz}{dt}  = xy - \frac{8}{3}z$
 
-\subsection{$0 < t < 32$}
-  \includegraphics[scale=0.5]{images/0-t-32}
+    \textbf{Discretização Euler}
 
-\subsection{$0 < t < 64$}
-  \includegraphics[scale=0.5]{images/0-t-64}
+    $\Delta t = \frac{t_f - t_i}{n}$
 
-\subsection{$0 < t < 128$}
-  \includegraphics[scale=0.5]{images/0-t-128}  
+    \textbf{Aplicando nas equações}
 
-\include {tabela_euler}
+    $x_{\text{k+1}} = x_k + h(-10x_k + 10y_k)$
 
+    $y_{\text{k+1}} = x_k + h(28x_k - y_k - x_kz_k)$
 
-Equações Euler
-
-$\frac{dx}{dt}  = -10x + 10y$
-
-$\frac{dy}{dt} = 28x - y - xz$
-
-$\frac{dz}{dt}  = xy - \frac{8}{3}z$
-
-Discretização Euler
+    $z_{\text{k+1}} = z_k + h(x_ky_k - \frac{8}{3}y_k)$
 
 
-$\Delta t = \frac{t_f - t_i}{n}$
-% \include {tabela_rungekutta}
+    \textbf{Matriz}
+    \begin{equation}
+      \left[
+      \begin{array}{c}
+      x_{\text{k+1}} \\
+      y_{\text{k+1}} \\
+      z_{\text{k+1}}
+      \end{array}
+      \right]
+      =
+      \left[
+      \begin{array}{c}
+      x_k \\
+      y_k \\
+      z_k \\
+      \end{array}
+      \right]  
+      \left[
+      \begin{array}{ccc}
+      1 - 10h & 10h   & 0 \\
+      28h & 1 - h & -hx \\
+      hy & -\frac{8}{3}h & 1
+      \end{array} \right]
+      \label{eqpc0}
+    \end{equation} 
 
+  \subsubsection {Tabela}
+%     \include {tabela_euler}
 
+\subsection{Runge-Kutta}
+  \subsubsection{Equações}
+  
+  \subsubsection{Tabela}
+  
+
+\subsection {Gráficos}
+		  \textbf{$0 < t < 1$}\par\medskip
+		  \includegraphics[scale=0.4]{images/0-t-1}
+
+		  \textbf{$0 < t < 2$}\par\medskip
+		  \includegraphics[scale=0.4]{images/0-t-2}	
+		  \newpage
+		  \textbf{$0 < t < 4$}\par\medskip
+		  \includegraphics[scale=0.4]{images/0-t-4}
+		  
+		  \textbf{$0 < t < 8$}\par\medskip
+		  \includegraphics[scale=0.4]{images/0-t-8}	
+		  
+		  \textbf{$0 < t < 16$}\par\medskip
+		  \includegraphics[scale=0.4]{images/0-t-16}	
+		  
+		  \textbf{$0 < t < 32$}\par\medskip
+		  \includegraphics[scale=0.4]{images/0-t-32}	
+		  
+		  \textbf{$0 < t < 64$}\par\medskip
+		  \includegraphics[scale=0.4]{images/0-t-64}	
+		  
+		  \textbf{$0 < t < 128$}\par\medskip
+		  \includegraphics[scale=0.4]{images/0-t-128}			  
+      
 \section{Spline}
 
 

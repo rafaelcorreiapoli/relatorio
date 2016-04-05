@@ -3,24 +3,23 @@
 \contentsline {section}{\numberline {2}EDOs e Condi\c c\~oes Inicias}{2}
 \contentsline {section}{\numberline {3}Metodologias}{2}
 \contentsline {section}{\numberline {4}An\'alise}{2}
-\contentsline {subsection}{\numberline {4.1}$0 < t < 1$}{2}
-\contentsline {subsection}{\numberline {4.2}$0 < t < 2$}{3}
-\contentsline {subsection}{\numberline {4.3}$0 < t < 4$}{3}
-\contentsline {subsection}{\numberline {4.4}$0 < t < 8$}{4}
-\contentsline {subsection}{\numberline {4.5}$0 < t < 16$}{4}
-\contentsline {subsection}{\numberline {4.6}$0 < t < 32$}{5}
-\contentsline {subsection}{\numberline {4.7}$0 < t < 64$}{5}
-\contentsline {subsection}{\numberline {4.8}$0 < t < 128$}{6}
-\contentsline {section}{\numberline {5}Spline}{8}
-\contentsline {section}{\numberline {6}Conclus\~ao}{8}
-\contentsline {section}{\numberline {7}Ap\^endice}{8}
-\contentsline {section}{\numberline {8}Exemplos de Equa\c c\~oes}{8}
-\contentsline {subsection}{\numberline {8.1}Equa\c c\~oes simples}{8}
-\contentsline {subsection}{\numberline {8.2}Equa\c c\~oes com mais de uma linha}{8}
-\contentsline {subsection}{\numberline {8.3}Sistema linear}{9}
-\contentsline {section}{\numberline {9}Tabelas}{10}
-\contentsline {subsection}{\numberline {9.1}Tabela Simples}{10}
-\contentsline {subsection}{\numberline {9.2}Tabela mais elaborada}{10}
-\contentsline {section}{\numberline {10}Edi\c c\~ao}{10}
-\contentsline {section}{\numberline {11}Inserir figuras}{10}
-\contentsline {section}{\numberline {12}Conclus\~oes}{11}
+\contentsline {subsection}{\numberline {4.1}Euler}{2}
+\contentsline {subsubsection}{\numberline {4.1.1}Equa\c c\~oes}{2}
+\contentsline {subsubsection}{\numberline {4.1.2}Tabela}{3}
+\contentsline {subsection}{\numberline {4.2}Runge-Kutta}{3}
+\contentsline {subsubsection}{\numberline {4.2.1}Equa\c c\~oes}{3}
+\contentsline {subsubsection}{\numberline {4.2.2}Tabela}{3}
+\contentsline {subsection}{\numberline {4.3}Gr\'aficos}{3}
+\contentsline {section}{\numberline {5}Spline}{6}
+\contentsline {section}{\numberline {6}Conclus\~ao}{6}
+\contentsline {section}{\numberline {7}Ap\^endice}{6}
+\contentsline {section}{\numberline {8}Exemplos de Equa\c c\~oes}{6}
+\contentsline {subsection}{\numberline {8.1}Equa\c c\~oes simples}{6}
+\contentsline {subsection}{\numberline {8.2}Equa\c c\~oes com mais de uma linha}{6}
+\contentsline {subsection}{\numberline {8.3}Sistema linear}{6}
+\contentsline {section}{\numberline {9}Tabelas}{8}
+\contentsline {subsection}{\numberline {9.1}Tabela Simples}{8}
+\contentsline {subsection}{\numberline {9.2}Tabela mais elaborada}{8}
+\contentsline {section}{\numberline {10}Edi\c c\~ao}{8}
+\contentsline {section}{\numberline {11}Inserir figuras}{8}
+\contentsline {section}{\numberline {12}Conclus\~oes}{9}
