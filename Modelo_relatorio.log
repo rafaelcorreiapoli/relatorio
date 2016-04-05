@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.4)  4 APR 2016 22:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.4)  4 APR 2016 22:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -223,7 +223,29 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/ntgclass/a4.sty
 Package: a4 2004/04/15 v1.2g A4 based page layout
 )
-(./Modelo_relatorio.aux (./capa2.aux)
+(./Modelo_relatorio.aux (./capa2.aux) (./tabela_euler.aux
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+)
 
 LaTeX Warning: Label `eqpc0' multiply defined.
 
@@ -372,83 +394,122 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
- [1] [2]
-<images/0-t-1.png, id=33, 612.2875pt x 461.725pt>
+ [1] [2] [3]
+\openout2 = `tabela_euler.aux'.
+
+
+(./tabela_euler.tex
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 1.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 28.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 55.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 83.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 109.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 135.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 161.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 187.
+
+) [4] [5] [6] [7] <images/0-t-1.png, id=51, 612.2875pt x 461.725pt>
 File: images/0-t-1.png Graphic file (type png)
- <use images/0-t-1.png>
+
+<use images/0-t-1.png>
 Package pdftex.def Info: images/0-t-1.png used on input line 155.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
-
-<images/0-t-2.png, id=35, 612.2875pt x 461.725pt>
+ <images/0-t-2.png, id=53, 612.2875pt x 461.725pt>
 File: images/0-t-2.png Graphic file (type png)
- <use images/0-t-2.png>
+
+<use images/0-t-2.png>
 Package pdftex.def Info: images/0-t-2.png used on input line 158.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
+ [8
 
-[3 <./images/0-t-1.png> <./images/0-t-2.png>]
-<images/0-t-4.png, id=41, 612.2875pt x 461.725pt>
+
+ <./images/0-t-1.png> <./images/0-t-2.png>]
+<images/0-t-4.png, id=59, 612.2875pt x 461.725pt>
 File: images/0-t-4.png Graphic file (type png)
  <use images/0-t-4.png>
 Package pdftex.def Info: images/0-t-4.png used on input line 161.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
 
-<images/0-t-8.png, id=42, 612.2875pt x 461.725pt>
+<images/0-t-8.png, id=60, 612.2875pt x 461.725pt>
 File: images/0-t-8.png Graphic file (type png)
  <use images/0-t-8.png>
 Package pdftex.def Info: images/0-t-8.png used on input line 164.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
 
-<images/0-t-16.png, id=43, 612.2875pt x 461.725pt>
+<images/0-t-16.png, id=61, 612.2875pt x 461.725pt>
 File: images/0-t-16.png Graphic file (type png)
  <use images/0-t-16.png>
 Package pdftex.def Info: images/0-t-16.png used on input line 167.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
 
-[4 <./images/0-t-4.png> <./images/0-t-8.png> <./images/0-t-16.png>]
-<images/0-t-32.png, id=50, 612.2875pt x 461.725pt>
+[9 <./images/0-t-4.png> <./images/0-t-8.png> <./images/0-t-16.png>]
+<images/0-t-32.png, id=68, 612.2875pt x 461.725pt>
 File: images/0-t-32.png Graphic file (type png)
  <use images/0-t-32.png>
 Package pdftex.def Info: images/0-t-32.png used on input line 170.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
 
-<images/0-t-64.png, id=51, 612.2875pt x 461.725pt>
+<images/0-t-64.png, id=69, 612.2875pt x 461.725pt>
 File: images/0-t-64.png Graphic file (type png)
  <use images/0-t-64.png>
 Package pdftex.def Info: images/0-t-64.png used on input line 173.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
 
-<images/0-t-128.png, id=52, 612.2875pt x 461.725pt>
+<images/0-t-128.png, id=70, 612.2875pt x 461.725pt>
 File: images/0-t-128.png Graphic file (type png)
  <use images/0-t-128.png>
 Package pdftex.def Info: images/0-t-128.png used on input line 176.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
 
-[5 <./images/0-t-32.png> <./images/0-t-64.png> <./images/0-t-128.png>] [6]
-[7]
+[10 <./images/0-t-32.png> <./images/0-t-64.png> <./images/0-t-128.png>]
+[11] [12]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 305.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-<figura.pdf, id=68, 614.295pt x 794.97pt>
+<figura.pdf, id=86, 614.295pt x 794.97pt>
 File: figura.pdf Graphic file (type pdf)
  <use figura.pdf>
 Package pdftex.def Info: figura.pdf used on input line 318.
 (pdftex.def)             Requested size: 307.81224pt x 398.33858pt.
- [8
+ [13
 
 ]
-(./Modelo_relatorio.bbl [9 <./figura.pdf>]) [10] (./Modelo_relatorio.aux
-(./capa2.aux))
+(./Modelo_relatorio.bbl [14 <./figura.pdf>]) [15] (./Modelo_relatorio.aux
+(./capa2.aux) (./tabela_euler.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3841 strings out of 495004
- 50718 string characters out of 6180663
- 118753 words of memory out of 5000000
- 6938 multiletter control sequences out of 15000+600000
+ 3850 strings out of 495004
+ 50857 string characters out of 6180663
+ 140056 words of memory out of 5000000
+ 6940 multiletter control sequences out of 15000+600000
  18970 words of font info for 54 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  38i,12n,24p,252b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -467,16 +528,16 @@ c/ecbx1728.600pk> </home/rafa93br/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx12
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb>
-Output written on Modelo_relatorio.pdf (12 pages, 434849 bytes).
+ype1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Modelo_relatorio.pdf (17 pages, 451083 bytes).
 PDF statistics:
- 537 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
+ 559 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -6,20 +6,20 @@
 \contentsline {subsection}{\numberline {4.1}Euler}{2}
 \contentsline {subsubsection}{\numberline {4.1.1}Equa\c c\~oes}{2}
 \contentsline {subsubsection}{\numberline {4.1.2}Tabela}{3}
-\contentsline {subsection}{\numberline {4.2}Runge-Kutta}{3}
-\contentsline {subsubsection}{\numberline {4.2.1}Equa\c c\~oes}{3}
-\contentsline {subsubsection}{\numberline {4.2.2}Tabela}{3}
-\contentsline {subsection}{\numberline {4.3}Gr\'aficos}{3}
-\contentsline {section}{\numberline {5}Spline}{6}
-\contentsline {section}{\numberline {6}Conclus\~ao}{6}
-\contentsline {section}{\numberline {7}Ap\^endice}{6}
-\contentsline {section}{\numberline {8}Exemplos de Equa\c c\~oes}{6}
-\contentsline {subsection}{\numberline {8.1}Equa\c c\~oes simples}{6}
-\contentsline {subsection}{\numberline {8.2}Equa\c c\~oes com mais de uma linha}{6}
-\contentsline {subsection}{\numberline {8.3}Sistema linear}{6}
-\contentsline {section}{\numberline {9}Tabelas}{8}
-\contentsline {subsection}{\numberline {9.1}Tabela Simples}{8}
-\contentsline {subsection}{\numberline {9.2}Tabela mais elaborada}{8}
-\contentsline {section}{\numberline {10}Edi\c c\~ao}{8}
-\contentsline {section}{\numberline {11}Inserir figuras}{8}
-\contentsline {section}{\numberline {12}Conclus\~oes}{9}
+\contentsline {subsection}{\numberline {4.2}Runge-Kutta}{8}
+\contentsline {subsubsection}{\numberline {4.2.1}Equa\c c\~oes}{8}
+\contentsline {subsubsection}{\numberline {4.2.2}Tabela}{8}
+\contentsline {subsection}{\numberline {4.3}Gr\'aficos}{8}
+\contentsline {section}{\numberline {5}Spline}{11}
+\contentsline {section}{\numberline {6}Conclus\~ao}{11}
+\contentsline {section}{\numberline {7}Ap\^endice}{11}
+\contentsline {section}{\numberline {8}Exemplos de Equa\c c\~oes}{11}
+\contentsline {subsection}{\numberline {8.1}Equa\c c\~oes simples}{11}
+\contentsline {subsection}{\numberline {8.2}Equa\c c\~oes com mais de uma linha}{11}
+\contentsline {subsection}{\numberline {8.3}Sistema linear}{11}
+\contentsline {section}{\numberline {9}Tabelas}{13}
+\contentsline {subsection}{\numberline {9.1}Tabela Simples}{13}
+\contentsline {subsection}{\numberline {9.2}Tabela mais elaborada}{13}
+\contentsline {section}{\numberline {10}Edi\c c\~ao}{13}
+\contentsline {section}{\numberline {11}Inserir figuras}{13}
+\contentsline {section}{\numberline {12}Conclus\~oes}{14}

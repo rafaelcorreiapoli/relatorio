@@ -2,11 +2,12 @@ This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Modelo_relatorio.aux
 A level-1 auxiliary file: capa2.aux
+A level-1 auxiliary file: tabela_euler.aux
 The style file: plain.bst
 Database file #1: bibliografia.bib
 You've used 2 entries,
             2118 wiz_defined-function locations,
-            513 strings with 4472 characters,
+            514 strings with 4488 characters,
 and the built_in function-call counts, 610 in all, are:
 = -- 60
 > -- 30
