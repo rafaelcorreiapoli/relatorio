@@ -179,6 +179,7 @@ Para condicoes iniciais nulas, $x_0 = 0$, $y_0 = 0$, $z_0 = 0$, o sistema perman
       \label{eqpc0}
     \end{equation}      
      
+  \clearpage
   \subsection{Runge-Kutta}
     \subsubsection{Algoritmo}
       \begin{verbatim}
@@ -194,7 +195,8 @@ Para condicoes iniciais nulas, $x_0 = 0$, $y_0 = 0$, $z_0 = 0$, o sistema perman
 	  y(i+1,:) = y(i,:)+phi*h
 	end
       \end{verbatim}
-
+  
+    \clearpage
     \subsubsection{Discretização}    
       $\frac{dx}{dt} = -10x -10y$
       
@@ -210,89 +212,124 @@ Para condicoes iniciais nulas, $x_0 = 0$, $y_0 = 0$, $z_0 = 0$, o sistema perman
       
       $x_{\text{k+1}} = h\frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$
       
-      $\frac{dy}{dt} = 28x - y - xz
+      $\frac{dy}{dt} = 28x - y - xz$
       
       \textbf{RK4}
       
+      $k_1 = 28x - y_l - xz$
       
-      $\Delta t = \frac{t_f - t_i}{n} = h$
+      $k_2 = 28x - (y_k + \frac{h}{2}k_1) - xz$
       
-      $k_1 = hf(y_i, y_i)$
+      $k_3 = 28x - (y_k + \frac{h}{2}k_2) - xz$
       
-      $k_2 = hf(t_i + \frac{h}{2}, y_i + \frac{k_1}{2}$
+      $k_4 = 28x - (y_k + h*k_1) - xz$
       
-      $k_3 = hf(t_i + \frac{h}{2}, y_i + \frac{k_2}{2}$
+      $y_{\text{k+1}} = y_k + h\frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$
       
-      $k_4 = hf(t_i + h, y_i + k+3)$
+      $\frac{dz}{dt} = xy - \frac{8}{3}y$
       
-      $y_{\text{i+1}} = y_i + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k4)$
+      \textbf{RK4}
+      
+      $k_1 = xy - \frac{8}{3}y$
+      
+      $k_2 = xy - \frac{8}{3}y$
+      
+      $k_3 = xy - \frac{8}{3}y$
+      
+      $k_4 = xy - \frac{8}{3}y$
+
+      $z_{\text{k+1}} = z_k + h\frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$
+      
+%       $\Delta t = \frac{t_f - t_i}{n} = h$
+%       
+%       $k_1 = hf(y_i, y_i)$
+%       
+%       $k_2 = hf(t_i + \frac{h}{2}, y_i + \frac{k_1}{2}$
+%       
+%       $k_3 = hf(t_i + \frac{h}{2}, y_i + \frac{k_2}{2}$
+%       
+%       $k_4 = hf(t_i + h, y_i + k+3)$
+%       
+%       $y_{\text{i+1}} = y_i + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k4)$
    
+
+		  
+		  
+% Parte 4
+\section{Análise}
+  \subsection {Tabela de RK}
+    \include{tabela_euler}
+ 
+  \subsection {Gráficos de RK}
+    A seguir apresentaremos os gráficos obtidos a partir da resolução das equações diferenciais pelas metodologias apresentadas no item anterior.
+
+    É importante notar que apresentaremos apenas um gráfico para cada intervalo de tempo (apesar de termos duas metodologias) pois os resultados foram extremamente parecidos.
+    
+    \item Vermelho: (x, y)
+    \item Azul: (x, z)
+    
+		    \textbf{$0 < t < 1$}\par\medskip
+		    \includegraphics[scale=0.4]{images/0-t-1}
+
+		    \textbf{$0 < t < 2$}\par\medskip
+		    \includegraphics[scale=0.4]{images/0-t-2}	
+		    \newpage
+		    \textbf{$0 < t < 4$}\par\medskip
+		    \includegraphics[scale=0.4]{images/0-t-4}
+		    
+		    \textbf{$0 < t < 8$}\par\medskip
+		    \includegraphics[scale=0.4]{images/0-t-8}	
+		    
+		    \textbf{$0 < t < 16$}\par\medskip
+		    \includegraphics[scale=0.4]{images/0-t-16}	
+		    
+		    \textbf{$0 < t < 32$}\par\medskip
+		    \includegraphics[scale=0.4]{images/0-t-32}	
+		    
+		    \textbf{$0 < t < 64$}\par\medskip
+		    \includegraphics[scale=0.4]{images/0-t-64}	
+		    
+		    \textbf{$0 < t < 128$}\par\medskip
+		    \includegraphics[scale=0.4]{images/0-t-128}	  
    \subsection{Solução Manufaturada}
+    A solução manufaturada tem como objetivo comparar o comportamento da curva obtida pelos dois métodos mediante a uma solução particular (no caso, para $x_0 = 0$, $y_0 = 0$ e $z_0 = 10$). 
+    
+    Para cada discretização no intervalo em questão $(0 < t < 2 )$, podemos plotar os gráficos abaixo e observar claramente a preferência pelo método de Runge-Kutta para a solução das EDOs, uma vez que ela convergirá muito mais rapidamente para a solução.
+    
+    $x(t) = -\frac{y}{10} e^(-10t) + \frac{y}{10}$
+    
+    $y(t) = (-28x + xz)e^(-t) + 28x -xz$
+    
+    $z(t) = 10 + xyt - \frac{8}{3}y*t$    
+    
+    
     Utilizando Euler, obtemos o gráfico abaixo, com $h= \frac{1}{4}$
+    
     		  \textbf{Gráfico de (x,t)}\par\medskip
 		  \includegraphics[scale=0.4]{images/manu-euler}
   
-    \item Vermelho: Aproximação RK
+    \item Vermelho: Aproximação Euler
     \item Azul: Solução Manufaturada
     
     Temos que a ordem de convergência do método de Euler Explícito é 1
     
     Utilizando RK clássico, obtemos o gráfico abaixo, com $h= \frac{1}{4}$
+    
     		  \textbf{Gráfico de (x,t)}\par\medskip
 		  \includegraphics[scale=0.4]{images/manu-rk}
+		  
     O qual já é próximo ao esperado.
     
     Temos que a ordem de convergência do método de Runge-Kutta Clássico é 4
-		  
-		  
-% Parte 4
-\section{Análise}
-\subsection {Euler}
-  \subsubsection {Tabela}
-     \include{tabela_euler}
-     
-  \subsubsection {Solução Manufaturada}
-    $x(t) = -\frac{y}{10} e^(-10t) + \frac{y}{10}$
-    
-    $y(t) = (-28x + xz)e^(-t) + 28x -xz$
-    
-    $z(t) = 10 + xyt - \frac{8}{3}y*t$     
-
-\subsection{Runge-Kutta}
-  \subsubsection{Equações}
-  
-  \subsubsection{Tabela}
-  
-
-\subsection {Gráficos}
-  A seguir apresentaremos os gráficos obtidos a partir da resolução das equações diferenciais pelas metodologias apresentadas no item anterior.
-
-  É importante notar que apresentaremos apenas um gráfico para cada intervalo de tempo (apesar de termos duas metodologias) pois os resultados foram extremamente parecidos.
-		  \textbf{$0 < t < 1$}\par\medskip
-		  \includegraphics[scale=0.4]{images/0-t-1}
-
-		  \textbf{$0 < t < 2$}\par\medskip
-		  \includegraphics[scale=0.4]{images/0-t-2}	
-		  \newpage
-		  \textbf{$0 < t < 4$}\par\medskip
-		  \includegraphics[scale=0.4]{images/0-t-4}
-		  
-		  \textbf{$0 < t < 8$}\par\medskip
-		  \includegraphics[scale=0.4]{images/0-t-8}	
-		  
-		  \textbf{$0 < t < 16$}\par\medskip
-		  \includegraphics[scale=0.4]{images/0-t-16}	
-		  
-		  \textbf{$0 < t < 32$}\par\medskip
-		  \includegraphics[scale=0.4]{images/0-t-32}	
-		  
-		  \textbf{$0 < t < 64$}\par\medskip
-		  \includegraphics[scale=0.4]{images/0-t-64}	
-		  
-		  \textbf{$0 < t < 128$}\par\medskip
-		  \includegraphics[scale=0.4]{images/0-t-128}			  
-      
+        
 \section{Splines}
+Nesta seção, vamos utilizar o spline como etapa de pós processamento, no intuito de observar a forma da curva gerada pelas tabelas de 1 a 7 (na qual $0 < t < 2 )$.
+
+Para tanto, foi utilizada a função "splin" do SciLab, para cada variável x, y e z em relação ao tempo. Tal implementação e seu código estão mais bem explicados no Apêndice A - Splines.
+
+
+Vale ressaltar que o código gerou uma curva suave (Spline cúbica) com os pontos iniciais e finais para o período em questão. O Spline é um método de boa precisão na interpolação de pontos, para uma boa visualização de gráficos gerados por tabelas.
+
 
 		  \textbf{(t, x)}\par\medskip
 		  \includegraphics[scale=0.4]{images/spline-x}
@@ -353,7 +390,18 @@ O estudo destas equações, além de ter despertado o interesse na aplicação de mét
 
   \subsection {Algoritmo Spline Cúbico}
   \input {algoritmo_spline}
-
+  
+  \subsection{O Modelo de Lorentz}
+  
+  O Atractor de Lorenz foi introduzido por Edward Lorenz em 1963, que o derivou a partir das equações simplificadas de rolos de convecção que ocorrem nas equações da atmosfera.
+  
+  É um mapa caótico que mostra como o estado de um sistema dinâmico evolui no tempo num padrão complexo, não-repetitivo e cuja forma é conhecida por se assemelhar a uma borboleta.
+  
+  Trata-se de um sistema não-linear, tridimensional e determinístico que exibe comportamento caótico e demonstra aquilo a que hoje se chama um atractor estranho. 
+  
+  As equações do modelo de Lorenz introduzidas são desenvolvidas a partir da equação de escoamento Navier-Stokes e a equação que descreve a difusão da energia térmica. 
+  
+  A dedução do modelo não está no escopo do trabalho, uma vez que ela é derivada de várias simplificações e conjecturas modeladas.
 
 
 \end{document} %finaliza o documento
