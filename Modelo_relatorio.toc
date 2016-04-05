@@ -1,33 +1,33 @@
 \select@language {brazil}
 \contentsline {section}{\numberline {1}Introdu\c c\~ao}{2}
-\contentsline {section}{\numberline {2}EDOs e Condi\c c\~oes Inicias}{2}
-\contentsline {section}{\numberline {3}Metodologias}{2}
-\contentsline {subsection}{\numberline {3.1}Euler}{2}
-\contentsline {subsubsection}{\numberline {3.1.1}Algoritmo}{2}
-\contentsline {subsubsection}{\numberline {3.1.2}Discretiza\c c\~ao}{3}
-\contentsline {subsection}{\numberline {3.2}Runge-Kutta}{3}
-\contentsline {subsubsection}{\numberline {3.2.1}Algoritmo}{3}
-\contentsline {subsubsection}{\numberline {3.2.2}Discretiza\c c\~ao}{3}
-\contentsline {section}{\numberline {4}An\'alise}{3}
-\contentsline {subsection}{\numberline {4.1}Euler}{3}
-\contentsline {subsubsection}{\numberline {4.1.1}Equa\c c\~oes}{3}
-\contentsline {subsubsection}{\numberline {4.1.2}Tabela}{4}
-\contentsline {subsection}{\numberline {4.2}Runge-Kutta}{9}
-\contentsline {subsubsection}{\numberline {4.2.1}Equa\c c\~oes}{9}
-\contentsline {subsubsection}{\numberline {4.2.2}Tabela}{9}
-\contentsline {subsection}{\numberline {4.3}Gr\'aficos}{9}
-\contentsline {section}{\numberline {5}Spline}{12}
-\contentsline {section}{\numberline {6}Conclus\~ao}{12}
-\contentsline {section}{\numberline {7}Ap\^endice}{12}
-\contentsline {subsection}{\numberline {7.1}Defini\c c\~ao Spline}{12}
-\contentsline {subsection}{\numberline {7.2}Algoritmo Spline C\'ubico}{13}
-\contentsline {section}{\numberline {8}Exemplos de Equa\c c\~oes}{17}
-\contentsline {subsection}{\numberline {8.1}Equa\c c\~oes simples}{17}
-\contentsline {subsection}{\numberline {8.2}Equa\c c\~oes com mais de uma linha}{17}
-\contentsline {subsection}{\numberline {8.3}Sistema linear}{18}
-\contentsline {section}{\numberline {9}Tabelas}{19}
-\contentsline {subsection}{\numberline {9.1}Tabela Simples}{19}
-\contentsline {subsection}{\numberline {9.2}Tabela mais elaborada}{19}
-\contentsline {section}{\numberline {10}Edi\c c\~ao}{19}
-\contentsline {section}{\numberline {11}Inserir figuras}{19}
-\contentsline {section}{\numberline {12}Conclus\~oes}{20}
+\contentsline {section}{\numberline {2}EDOs e Condi\c c\~oes Inicias}{3}
+\contentsline {section}{\numberline {3}Metodologias}{3}
+\contentsline {subsection}{\numberline {3.1}Euler}{3}
+\contentsline {subsubsection}{\numberline {3.1.1}Algoritmo}{3}
+\contentsline {subsubsection}{\numberline {3.1.2}Discretiza\c c\~ao}{4}
+\contentsline {subsection}{\numberline {3.2}Runge-Kutta}{4}
+\contentsline {subsubsection}{\numberline {3.2.1}Algoritmo}{4}
+\contentsline {subsubsection}{\numberline {3.2.2}Discretiza\c c\~ao}{4}
+\contentsline {section}{\numberline {4}An\'alise}{4}
+\contentsline {subsection}{\numberline {4.1}Euler}{4}
+\contentsline {subsubsection}{\numberline {4.1.1}Equa\c c\~oes}{4}
+\contentsline {subsubsection}{\numberline {4.1.2}Tabela}{5}
+\contentsline {subsection}{\numberline {4.2}Runge-Kutta}{10}
+\contentsline {subsubsection}{\numberline {4.2.1}Equa\c c\~oes}{10}
+\contentsline {subsubsection}{\numberline {4.2.2}Tabela}{10}
+\contentsline {subsection}{\numberline {4.3}Gr\'aficos}{10}
+\contentsline {section}{\numberline {5}Spline}{13}
+\contentsline {section}{\numberline {6}Conclus\~ao}{13}
+\contentsline {section}{\numberline {7}Ap\^endice}{13}
+\contentsline {subsection}{\numberline {7.1}Defini\c c\~ao Spline}{13}
+\contentsline {subsection}{\numberline {7.2}Algoritmo Spline C\'ubico}{14}
+\contentsline {section}{\numberline {8}Exemplos de Equa\c c\~oes}{18}
+\contentsline {subsection}{\numberline {8.1}Equa\c c\~oes simples}{18}
+\contentsline {subsection}{\numberline {8.2}Equa\c c\~oes com mais de uma linha}{18}
+\contentsline {subsection}{\numberline {8.3}Sistema linear}{19}
+\contentsline {section}{\numberline {9}Tabelas}{20}
+\contentsline {subsection}{\numberline {9.1}Tabela Simples}{20}
+\contentsline {subsection}{\numberline {9.2}Tabela mais elaborada}{20}
+\contentsline {section}{\numberline {10}Edi\c c\~ao}{20}
+\contentsline {section}{\numberline {11}Inserir figuras}{20}
+\contentsline {section}{\numberline {12}Conclus\~oes}{21}

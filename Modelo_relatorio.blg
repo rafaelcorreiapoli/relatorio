@@ -5,44 +5,54 @@ A level-1 auxiliary file: capa2.aux
 A level-1 auxiliary file: tabela_euler.aux
 The style file: plain.bst
 Database file #1: bibliografia.bib
-You've used 2 entries,
+Warning--empty journal in b
+Warning--empty year in b
+Warning--empty journal in c
+Warning--empty year in c
+Warning--empty journal in d
+Warning--empty year in d
+Warning--empty booktitle in e
+Warning--empty journal in a
+Warning--empty year in a
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            514 strings with 4488 characters,
-and the built_in function-call counts, 610 in all, are:
-= -- 60
-> -- 30
-< -- 0
-+ -- 13
+            518 strings with 4338 characters,
+and the built_in function-call counts, 1237 in all, are:
+= -- 115
+> -- 35
+< -- 1
++ -- 15
 - -- 10
-* -- 43
-:= -- 116
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 11
+* -- 65
+:= -- 212
+add.period$ -- 13
+call.type$ -- 5
+change.case$ -- 20
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 20
-empty$ -- 41
+cite$ -- 14
+duplicate$ -- 63
+empty$ -- 108
 format.name$ -- 10
-if$ -- 116
+if$ -- 256
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 1
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 9
+int.to.str$ -- 5
+missing$ -- 5
+newline$ -- 25
+num.names$ -- 10
+pop$ -- 38
 preamble$ -- 1
-purify$ -- 9
+purify$ -- 15
 quote$ -- 0
-skip$ -- 12
+skip$ -- 43
 stack$ -- 0
-substring$ -- 36
-swap$ -- 2
-text.length$ -- 0
+substring$ -- 53
+swap$ -- 9
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
-warning$ -- 0
-while$ -- 6
-width$ -- 3
-write$ -- 24
+type$ -- 20
+warning$ -- 9
+while$ -- 12
+width$ -- 6
+write$ -- 43
+(There were 9 warnings)

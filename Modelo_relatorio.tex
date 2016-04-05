@@ -39,10 +39,7 @@
 
 
 \pagestyle {empty}
-\abstract{Este é um ``boneco'' de um relatório na forma próxima ao que gostaria. As seções não são as mesmas que pedi
-mas já representa um bom avanço. Modifiquem à vontade. Encontrei fazendo {\it google it} em ``modelo de relatório em latex''.
-Encontrei também sugestões de editores inteligentes: o  {\it Kile}\, para usuários de linux e {\it TeXnicCenter}\, para 
-usuários de Windows. Eu uso o {\it Kile}. O para windows eu não conheço. Consta que ambos são programas gratuitos.}
+\abstract{Este trabalho tem sua motivação analisar o comportamento das soluções das equações de Lorenz (E. N. Lorenz, Journal of Atmospheric Sciences, 1963) através dos conhecimentos adquiridos na disciplina MAP3122 - MÉTODOS NUMÉRICOS E APLICAÇÕES, lecionada pelo prof. dr. Alexandre Roma na Escola Politécnica da USP em 2016. Vamos utilizar dois métodos de aproximação numérica (Euler explícito e Runge-Kutta Clássico), bem como a construção de um gráfico pelo método de Spline Cúbica, obtido pela construção das tabelas para a avaliação dos resultados.}
 
 \newpage
 
@@ -69,15 +66,25 @@ usuários de Windows. Eu uso o {\it Kile}. O para windows eu não conheço. Consta 
 
 \section{Introdução}
 
-%comando cria itens
-\begin{itemize}
-	\item introduzir o problema a ser estudado
-	\item apresentar trabalhos relacionados
-	\item apresentar motivação
-	\item apresentar objetivos
-	\item último parágrafo deve conter a organização do documento
-	\item novo item
-\end{itemize}
+Lorenz estava questionando a fundamentação teórica dos métodos de previsão do tempo da época, baseados em regressão linear. Na sua opinião o fenômeno do tempo é demasiado não linear para que tais métodos possam dar resultados consistentes. Para testar a sua tese, comparou numericamente diversos métodos aplicados a certos modelos simplificados.
+
+A complexidade do modelo era um aspecto crítico dos experimentos, porque os computadores da época eram lentos. Lorenz dispunha de um Royal McBee LGP-30 com 16k de memória interna, capaz de realizar 60 multiplicações por segundo. Para um sistema de doze equações diferenciais,
+cada passo da integração numérica tomava 1 segundo. Após diversas tentativas, Lorenz acabou adotando um modelo com 3 equações introduzido por B. Saltzmann, que veio a ser chamado sistema de Lorenz. Esse modelo é uma simplificação do modelo de Rayleigh.
+Tais equações serão o modelo estudado no escopo deste trabalho.
+
+Para acelerar os cálculos, Lorenz imprimia os resultados com apenas 3 dígitos decimais, embora os cálculos fossem realizados com 6 dígitos. Em algum momento reintroduziu um resultado como novo dado inicial. Para sua surpresa, o novo cálculo divergia do anterior: as previsões para 4 dias mais tarde eram totalmente distintas. Inicialmente, Lorenz acreditou que isso se devia a falha
+mecânica. As consequências desta descoberta de que o modelo é sensitivo aos dados iniciais foram profundas. A idéia de sensitividade não era nova. Já J. C. Maxwell havia observado no século 19 que ``as mesmas causas produzem os mesmos efeitos'' não significa que ``causas
+próximas produzem efeitos próximos''. A comunidade científica havia apelidado este efeito de Efeito Borboleta. 
+Alguns anos depois (1971), D. Ruelle e F. Takens estavam questionando a interpretação matemática do fenômeno de turbulência predominante na época. E. Hopf e, posteriormente, L. Landau e E. Lifshitz haviam sugerido que turbulência corresponde a existência de toros invariantes de grande dimensão no espaço de configurações do fluido. Ruelle e Takens demonstraram que esse modelo não tem sustentação matemática. Em troca, propuseram que turbulência deve corresponder a existência no espaço de configurações de algum "atrator estranho".
+Um atrator é uma região do espaço de configurações que fica invariante quando o tempo passa e que atrai muitas (ou até todas as) configurações próximas. Ruelle e Takens não definiram "estranho", nem conheciam bons exemplos. De fato, o sistema de Lorenz era um exemplo espetacular dessa noção.
+E atrator estranho acabou significando um atrator tal que as trajetórias que convergem para ele dependem sensitivamente do ponto inicial. Mas o trabalho de Lorenz ainda era mal conhecido, e
+Ruelle e Takens só tinham como exemplos os atratores hiperbólicos de Smale.
+
+Um dos aspectos mais surpreendentes desta construção é que ela é robusta: se modificarmos ligeiramente o fluxo, continua existindo um atrator. Isto é ainda mais surpreendente porque o atrator contém um ponto estacionário, acumulada por trajetórias não estacionárias.
+Parecia que esse fenômeno deveria pode ser destruído por modificações do fluxo. Acreditava-se que os atratores robustos teriam que ser hiperbólicos. Este fenômeno de Lorenz mostrou que o problema de compreender o que faz um sistema dinâmico ser robusto é especialmente sutil para sistemas com tempo contínuo (fluxos).
+
+Continuava em aberto saber se as equações originais de Lorenz realmente têm um atrator estranho. Isso foi resolvido em 1998 por W. Tucker (Suécia), que provou Teorema [W. Tucker]:
+As equações de Lorenz admitem um atrator estranho para os valores dos parâmetros originalmente considerados por Lorenz.
 
 \section{EDOs e Condições Inicias}
 
@@ -113,15 +120,16 @@ O sistema exibe comportamento caótico para $\rho = 28$ mas tem órbitas periódica
     \subsubsection{Algoritmo}
       \begin{verbatim}
 	for i=1:n-1
-	k1 = dydt (t(i),y(i,:))
-	ymid = y(i,:) + k1(h/2)
-	k2 = dydt (t(i)+(h/2),ymid)
-	ymid = y(i,:) + k2(h/2)
-	k3 = dydt(t(i) + (h/2),ymid)
-	yend = y(i,:) + k3h
-	k4 = dydt(t(i)+h,yend) //como podemos perceber, o método eh de QUARTA ORDEM
-	phi = (1/6)(k1+2k2+2k3+k4)
-	y(i+1,:) = y(i,:)+phi*h       
+	  k1 = dydt (t(i),y(i,:))
+	  ymid = y(i,:) + k1(h/2)
+	  k2 = dydt (t(i)+(h/2),ymid)
+	  ymid = y(i,:) + k2(h/2)
+	  k3 = dydt(t(i) + (h/2),ymid)
+	  yend = y(i,:) + k3h
+	  k4 = dydt(t(i)+h,yend) //como podemos perceber, o método eh de QUARTA ORDEM
+	  phi = (1/6)(k1+2k2+2k3+k4)
+	  y(i+1,:) = y(i,:)+phi*h
+	end
       \end{verbatim}
 
     \subsubsection{Discretização}    
@@ -391,7 +399,7 @@ void main(void)             // ''main'' method always called first.
 %\clearpage %começa nova página
 
 
-Para citar referências bibliográficas~\cite{Adler89}, \cite{Carmo05}.
+Para citar referências bibliográficas~\cite{a}, \cite{b}, \cite{c}, \cite{d}, \cite{e}.
 
 
 

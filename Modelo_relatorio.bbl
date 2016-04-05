@@ -1,15 +1,26 @@
 \begin{thebibliography}{1}
 
-\bibitem{Adler89}
-I.~Adler, N.~K. Karmarkar, M.~G.~C. Resende, and G.~Veiga.
-\newblock An implementation of {Karmarkar's} algorithms for linear programming.
-\newblock {\em Mathematical Programming}, 44:297--335, 1989.
+\bibitem{b}
+Richard~L. Burden.
+\newblock Numerical analysis.
+\newblock NINTH EDITION.
 
-\bibitem{Carmo05}
-F.~C. Carmo.
-\newblock {\em An\'alise da influ\^encia de algoritmos de reordena\c{c}\~ao de
-  matrizes esparsas no desempenho do m\'etodo {$CCCG(\eta)$}}.
-\newblock Disserta\c{c}\~ao de mestrado, Departamento de Ci\^encia da
-  Computa\c{c}\~ao, Universidade Federal de Minas Gerais, 2005.
+\bibitem{c}
+Robert~C. Hilborn.
+\newblock Chaos and nonlinear dynamics: an introduction for scientists and
+  enginers.
+
+\bibitem{d}
+E.~N. Lorenz.
+\newblock Deterministic nonperiodic flow.
+
+\bibitem{e}
+J.~Sotomayor.
+\newblock Lições de equações diferenciais ordinárias.
+\newblock pages 189--252. IMPA, 1979.
+
+\bibitem{a}
+Marcelo Viana.
+\newblock Atratores estranhos de lorenz.
 
 \end{thebibliography}
