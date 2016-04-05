@@ -11,16 +11,16 @@
 \contentsline {subsection}{\numberline {4.6}$0 < t < 32$}{5}
 \contentsline {subsection}{\numberline {4.7}$0 < t < 64$}{5}
 \contentsline {subsection}{\numberline {4.8}$0 < t < 128$}{6}
-\contentsline {section}{\numberline {5}Spline}{6}
-\contentsline {section}{\numberline {6}Conclus\~ao}{6}
-\contentsline {section}{\numberline {7}Ap\^endice}{6}
-\contentsline {section}{\numberline {8}Exemplos de Equa\c c\~oes}{6}
-\contentsline {subsection}{\numberline {8.1}Equa\c c\~oes simples}{6}
-\contentsline {subsection}{\numberline {8.2}Equa\c c\~oes com mais de uma linha}{7}
-\contentsline {subsection}{\numberline {8.3}Sistema linear}{7}
-\contentsline {section}{\numberline {9}Tabelas}{8}
-\contentsline {subsection}{\numberline {9.1}Tabela Simples}{8}
-\contentsline {subsection}{\numberline {9.2}Tabela mais elaborada}{8}
-\contentsline {section}{\numberline {10}Edi\c c\~ao}{8}
-\contentsline {section}{\numberline {11}Inserir figuras}{8}
-\contentsline {section}{\numberline {12}Conclus\~oes}{9}
+\contentsline {section}{\numberline {5}Spline}{8}
+\contentsline {section}{\numberline {6}Conclus\~ao}{8}
+\contentsline {section}{\numberline {7}Ap\^endice}{8}
+\contentsline {section}{\numberline {8}Exemplos de Equa\c c\~oes}{8}
+\contentsline {subsection}{\numberline {8.1}Equa\c c\~oes simples}{8}
+\contentsline {subsection}{\numberline {8.2}Equa\c c\~oes com mais de uma linha}{8}
+\contentsline {subsection}{\numberline {8.3}Sistema linear}{9}
+\contentsline {section}{\numberline {9}Tabelas}{10}
+\contentsline {subsection}{\numberline {9.1}Tabela Simples}{10}
+\contentsline {subsection}{\numberline {9.2}Tabela mais elaborada}{10}
+\contentsline {section}{\numberline {10}Edi\c c\~ao}{10}
+\contentsline {section}{\numberline {11}Inserir figuras}{10}
+\contentsline {section}{\numberline {12}Conclus\~oes}{11}

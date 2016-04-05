@@ -7,6 +7,8 @@
 \usepackage{geometry}
 \usepackage[latin1]{inputenc}
 \usepackage[intlimits]{amsmath}
+\usepackage{longtable}
+
 %alguns macros
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
 \newcommand{\Rn}{{\ensuremath{\mathbb{R}}}^{n}}
@@ -112,6 +114,20 @@ A seguir apresentaremos os gráficos obtidos a partir da resolução das equações d
 
 \subsection{$0 < t < 128$}
   \includegraphics[scale=0.5]{images/0-t-128}  
+
+\include {tabela_euler}
+
+
+Equações Euler
+
+$\frac{dx}{dt}  = -10x + 10y$
+
+$\frac{dy}{dt} = 28x - y - xz$
+
+$\frac{dz}{dt}  = xy - \frac{8}{3}z$
+       
+% \include {tabela_rungekutta}
+
 
 \section{Spline}
 
