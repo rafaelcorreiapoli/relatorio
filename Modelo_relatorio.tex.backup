@@ -39,10 +39,10 @@
 
 
 \pagestyle {empty}
-\abstract{Este é um ``boneco'' de um relatório na forma próxima ao que gostaria. As seções não são as mesmas que pedi
-mas já representa um bom avanço. Modifiquem à vontade. Encontrei fazendo {\it google it} em ``modelo de relatório em latex''.
-Encontrei também sugestões de editores inteligentes: o  {\it Kile}\, para usuários de linux e {\it TeXnicCenter}\, para 
-usuários de Windows. Eu uso o {\it Kile}. O para windows eu não conheço. Consta que ambos são programas gratuitos.}
+\abstract{Este trabalho tem sua motivação analisar o comportamento das soluções das equações de Lorenz (E. N. Lorenz, Journal of Atmospheric Sciences, 1963) através dos conhecimentos adquiridos na disciplina MAP3122 - MÉTODOS NUMÉRICOS E APLICAÇÕES, lecionada pelo prof. dr. Alexandre Roma na Escola Politécnica da USP em 2016. Vamos utilizar dois métodos de aproximação numérica (Euler explícito e Runge-Kutta Clássico), bem como a construção de um gráfico pelo método de Spline Cúbica, obtido pela construção das tabelas para a avaliação dos resultados.
+
+\textbf{PALAVRAS CHAVE:} Efeito Borboleta, Atrator de Lorentz, Método de Euler Explícito, Método de Runge-Kutta Clássico, Spline Cúbica
+}
 
 \newpage
 
@@ -67,53 +67,91 @@ usuários de Windows. Eu uso o {\it Kile}. O para windows eu não conheço. Consta 
 % Espaçamento entre parágrafos
 \parskip 5pt  
 
+\clearpage
+
 \section{Introdução}
 
-%comando cria itens
-\begin{itemize}
-	\item introduzir o problema a ser estudado
-	\item apresentar trabalhos relacionados
-	\item apresentar motivação
-	\item apresentar objetivos
-	\item último parágrafo deve conter a organização do documento
-	\item novo item
-\end{itemize}
+Lorenz estava questionando a fundamentação teórica dos métodos de previsão do tempo da época, baseados em regressão linear. Na sua opinião o fenômeno do tempo é demasiado não linear para que tais métodos possam dar resultados consistentes. Para testar a sua tese, comparou numericamente diversos métodos aplicados a certos modelos simplificados.
+
+A complexidade do modelo era um aspecto crítico dos experimentos, porque os computadores da época eram lentos. Lorenz dispunha de um Royal McBee LGP-30 com 16k de memória interna, capaz de realizar 60 multiplicações por segundo. Para um sistema de doze equações diferenciais,
+cada passo da integração numérica tomava 1 segundo. Após diversas tentativas, Lorenz acabou adotando um modelo com 3 equações introduzido por B. Saltzmann, que veio a ser chamado sistema de Lorenz. Esse modelo é uma simplificação do modelo de Rayleigh.
+Tais equações serão o modelo estudado no escopo deste trabalho.
+
+Para acelerar os cálculos, Lorenz imprimia os resultados com apenas 3 dígitos decimais, embora os cálculos fossem realizados com 6 dígitos. Em algum momento reintroduziu um resultado como novo dado inicial. Para sua surpresa, o novo cálculo divergia do anterior: as previsões para 4 dias mais tarde eram totalmente distintas. Inicialmente, Lorenz acreditou que isso se devia a falha
+mecânica. As consequências desta descoberta de que o modelo é sensitivo aos dados iniciais foram profundas. A idéia de sensitividade não era nova. Já J. C. Maxwell havia observado no século 19 que ``as mesmas causas produzem os mesmos efeitos'' não significa que ``causas
+próximas produzem efeitos próximos''. A comunidade científica havia apelidado este efeito de Efeito Borboleta. 
+Alguns anos depois (1971), D. Ruelle e F. Takens estavam questionando a interpretação matemática do fenômeno de turbulência predominante na época. E. Hopf e, posteriormente, L. Landau e E. Lifshitz haviam sugerido que turbulência corresponde a existência de toros invariantes de grande dimensão no espaço de configurações do fluido. Ruelle e Takens demonstraram que esse modelo não tem sustentação matemática. Em troca, propuseram que turbulência deve corresponder a existência no espaço de configurações de algum "atrator estranho".
+Um atrator é uma região do espaço de configurações que fica invariante quando o tempo passa e que atrai muitas (ou até todas as) configurações próximas. Ruelle e Takens não definiram "estranho", nem conheciam bons exemplos. De fato, o sistema de Lorenz era um exemplo espetacular dessa noção.
+E atrator estranho acabou significando um atrator tal que as trajetórias que convergem para ele dependem sensitivamente do ponto inicial. Mas o trabalho de Lorenz ainda era mal conhecido, e
+Ruelle e Takens só tinham como exemplos os atratores hiperbólicos de Smale.
+
+Um dos aspectos mais surpreendentes desta construção é que ela é robusta: se modificarmos ligeiramente o fluxo, continua existindo um atrator. Isto é ainda mais surpreendente porque o atrator contém um ponto estacionário, acumulada por trajetórias não estacionárias.
+Parecia que esse fenômeno deveria pode ser destruído por modificações do fluxo. Acreditava-se que os atratores robustos teriam que ser hiperbólicos. Este fenômeno de Lorenz mostrou que o problema de compreender o que faz um sistema dinâmico ser robusto é especialmente sutil para sistemas com tempo contínuo (fluxos).
+
+Continuava em aberto saber se as equações originais de Lorenz realmente têm um atrator estranho. Isso foi resolvido em 1998 por W. Tucker (Suécia), que provou Teorema [W. Tucker]:
+As equações de Lorenz admitem um atrator estranho para os valores dos parâmetros originalmente considerados por Lorenz.
 
 \section{EDOs e Condições Inicias}
 
+\textbf{Apresentação das equações envolvidas:} 
+
+
+$\frac{dx}{dt}  = \sigma (y - x)$
+
+$\frac{dy}{dt} = x (\rho - z) - y$
+
+$\frac{dz}{dt}  = xy - \beta z$
+
+em que a $\sigma$ se chama o número de Prandtl e a $\rho$ se chama o número de Rayleigh. 
+
+Todos os $\sigma, \rho, \beta > 0$, mas usualmente $\sigma = 10$, $\beta = \frac{8}{3}$, enquanto $\rho$ varia. 
+
+O sistema exibe comportamento caótico para $\rho = 28$ mas tem órbitas periódicas para outros valores de $\rho$.
+
+\textbf{Condições Iniciais}
+
+$x_0 = 0$
+
+$y_0 = 0$
+
+$z_0 = 10$
+
+As condições iniciais são arbitrárias e foram escolhidas para o estudo do efeito caótico.
+
+No caso, para demonstrar o efeito caótico, basta que um dos termos deve ser diferente dos demais.
+
+Para condicoes iniciais nulas, $x_0 = 0$, $y_0 = 0$, $z_0 = 0$, o sistema permanece em repouso.
+
 \section{Metodologias}
+  \subsection{Euler}
+    \subsubsection{Algoritmo}
+      \begin{verbatim}
+	for i=1:n-1
+	    t(i,:)=h*i
+	    x(i+1,:) = y(i,:)+dxdt (t(i,:),x(i,:),y(i,:),z(i,:))*h 
+	    y(i+1,:) = y(i,:)+dydt (t(i,:),x(i,:),y(i,:),z(i,:))*h 
+	    z(i+1,:) = z(i,:)+dzdt (t(i,:),x(i,:),y(i,:),z(i,:))*h 
+	end       
+      \end{verbatim}
+    \subsubsection{Discretização}
+     $\Delta t = \frac{t_f - t_i}{n} = h$
+     
+      \textbf{Equações Euler}
+
+      $\frac{dx}{dt}  = -10x + 10y$
+
+      $\frac{dy}{dt} = 28x - y - xz$
+
+      $\frac{dz}{dt}  = xy - \frac{8}{3}z$
 
 
-% Parte 4
-\section{Análise}
-A seguir apresentaremos os gráficos obtidos a partir da resolução das equações diferenciais pelas metodologias aprensentadas no item anterior.
+      \textbf{Aplicando nas equações}
 
-É importante notar que apresentamos apenas um gráfico para cada intervalo de tempo (apesar de termos duas metodologias) pois os resultados foram extremamente parecidos.
+      $x_{\text{k+1}} = x_k + h(-10x_k + 10y_k)$
 
+      $y_{\text{k+1}} = x_k + h(28x_k - y_k - x_kz_k)$
 
-      
-\subsection {Euler}
-  \subsubsection {Equações}
-    \textbf{Equações Euler}
-
-    $\frac{dx}{dt}  = -10x + 10y$
-
-    $\frac{dy}{dt} = 28x - y - xz$
-
-    $\frac{dz}{dt}  = xy - \frac{8}{3}z$
-
-    \textbf{Discretização Euler}
-
-    $\Delta t = \frac{t_f - t_i}{n}$
-
-    \textbf{Aplicando nas equações}
-
-    $x_{\text{k+1}} = x_k + h(-10x_k + 10y_k)$
-
-    $y_{\text{k+1}} = x_k + h(28x_k - y_k - x_kz_k)$
-
-    $z_{\text{k+1}} = z_k + h(x_ky_k - \frac{8}{3}y_k)$
-
+      $z_{\text{k+1}} = z_k + h(x_ky_k - \frac{8}{3}y_k)$
 
     \textbf{Matriz}
     \begin{equation}
@@ -139,10 +177,86 @@ A seguir apresentaremos os gráficos obtidos a partir da resolução das equações d
       hy & -\frac{8}{3}h & 1
       \end{array} \right]
       \label{eqpc0}
-    \end{equation} 
+    \end{equation}      
+     
+  \subsection{Runge-Kutta}
+    \subsubsection{Algoritmo}
+      \begin{verbatim}
+	for i=1:n-1
+	  k1 = dydt (t(i),y(i,:))
+	  ymid = y(i,:) + k1(h/2)
+	  k2 = dydt (t(i)+(h/2),ymid)
+	  ymid = y(i,:) + k2(h/2)
+	  k3 = dydt(t(i) + (h/2),ymid)
+	  yend = y(i,:) + k3h
+	  k4 = dydt(t(i)+h,yend) //como podemos perceber, o método eh de QUARTA ORDEM
+	  phi = (1/6)(k1+2k2+2k3+k4)
+	  y(i+1,:) = y(i,:)+phi*h
+	end
+      \end{verbatim}
 
+    \subsubsection{Discretização}    
+      $\frac{dx}{dt} = -10x -10y$
+      
+      \textbf{RK4}
+      
+      $k_1 = -10x_k + 10y$
+      
+      $k_2 = -10(x_k + \frac{h}{2}k_1) + 10y$
+      
+      $k_3 = -10(x_k + \frac{h}{2}k_2) + 10y$
+      
+      $k_4 = -10(x_k + h*k_1) + 10y$
+      
+      $x_{\text{k+1}} = h\frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)$
+      
+      $\frac{dy}{dt} = 28x - y - xz
+      
+      \textbf{RK4}
+      
+      
+      $\Delta t = \frac{t_f - t_i}{n} = h$
+      
+      $k_1 = hf(y_i, y_i)$
+      
+      $k_2 = hf(t_i + \frac{h}{2}, y_i + \frac{k_1}{2}$
+      
+      $k_3 = hf(t_i + \frac{h}{2}, y_i + \frac{k_2}{2}$
+      
+      $k_4 = hf(t_i + h, y_i + k+3)$
+      
+      $y_{\text{i+1}} = y_i + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k4)$
+   
+   \subsection{Solução Manufaturada}
+    Utilizando Euler, obtemos o gráfico abaixo, com $h= \frac{1}{4}$
+    		  \textbf{Gráfico de (x,t)}\par\medskip
+		  \includegraphics[scale=0.4]{images/manu-euler}
+  
+    \item Vermelho: Aproximação RK
+    \item Azul: Solução Manufaturada
+    
+    Temos que a ordem de convergência do método de Euler Explícito é 1
+    
+    Utilizando RK clássico, obtemos o gráfico abaixo, com $h= \frac{1}{4}$
+    		  \textbf{Gráfico de (x,t)}\par\medskip
+		  \includegraphics[scale=0.4]{images/manu-rk}
+    O qual já é próximo ao esperado.
+    
+    Temos que a ordem de convergência do método de Runge-Kutta Clássico é 4
+		  
+		  
+% Parte 4
+\section{Análise}
+\subsection {Euler}
   \subsubsection {Tabela}
-     \include {tabela_euler}
+     \include{tabela_euler}
+     
+  \subsubsection {Solução Manufaturada}
+    $x(t) = -\frac{y}{10} e^(-10t) + \frac{y}{10}$
+    
+    $y(t) = (-28x + xz)e^(-t) + 28x -xz$
+    
+    $z(t) = 10 + xyt - \frac{8}{3}y*t$     
 
 \subsection{Runge-Kutta}
   \subsubsection{Equações}
@@ -151,6 +265,9 @@ A seguir apresentaremos os gráficos obtidos a partir da resolução das equações d
   
 
 \subsection {Gráficos}
+  A seguir apresentaremos os gráficos obtidos a partir da resolução das equações diferenciais pelas metodologias apresentadas no item anterior.
+
+  É importante notar que apresentaremos apenas um gráfico para cada intervalo de tempo (apesar de termos duas metodologias) pois os resultados foram extremamente parecidos.
 		  \textbf{$0 < t < 1$}\par\medskip
 		  \includegraphics[scale=0.4]{images/0-t-1}
 
@@ -175,10 +292,23 @@ A seguir apresentaremos os gráficos obtidos a partir da resolução das equações d
 		  \textbf{$0 < t < 128$}\par\medskip
 		  \includegraphics[scale=0.4]{images/0-t-128}			  
       
-\section{Spline}
+\section{Splines}
+
+		  \textbf{(t, x)}\par\medskip
+		  \includegraphics[scale=0.4]{images/spline-x}
+		  
+		  \textbf{(t, y)}\par\medskip
+		  \includegraphics[scale=0.4]{images/spline-y}
+		  
+		  \clearpage
+		  \textbf{(t, z)}\par\medskip
+		  \includegraphics[scale=0.4]{images/spline-z}		  
 
 
-\section{Conclusão}
+
+
+\clearpage
+\section{Conclusões} 
 O escopo deste trabalho consistiu na resolução das três equações diferenciais de Lorentz através de métodos numéricos aprendidos na disciplina. 
 
 Para tanto, utilizamos o método de Euler explícito pela sua facilidade do algoritmo e pela obtenção de uma boa aproximação inicial, na qual podemos comparar com o gráfico da solução manufaturada. 
@@ -188,164 +318,42 @@ Em seguida, implementamos o método de Runge-Kutta Clássico, e já observamos uma 
 
 O estudo destas equações, além de ter despertado o interesse na aplicação de métodos numéricos para sua resolução, tem forte aplicação em diversas áreas no estudo da teoria do caos como mencionado anteriormente, apesar do modelo ser derivado de uma simplificação de equações mais complexas.
 
-\section{Apêndice}
 
-\subsection {Algoritmo Spline Cúbico}
-\include {algoritmo_spline}
-
-\section{Exemplos de Equações}
-Nesta seção serão apresentados diferentes exemplos de equações.
-
-\subsection{Equações simples}
-
-\textbf{Sem numeração}
-\[\sum_{i=1}^{100}\frac{2^{i-1}}{4}\]
-
-
-	
-
-\textbf{Com numeração}
-\begin{equation}
-	\int_{0}^{100}\sqrt[4]{\frac{2n}{7}}
-\end{equation}
-
-\begin{equation}
-M^{-1}(AD^{-1}A^T)M^{-T}\bar{y} = M^{-1}(AD^{-1}(r_d -X^{-1}r_a) + r_p),
-\end{equation}
-
-
-\subsection{Equações com mais de uma linha}
-\begin{eqnarray}
-\label{pp} %faz um rótulo na equação. Será usado para referenciá-la.
-\min & c^Tx \\ \nonumber
-\mbox{s.a.} & Ax=b \\ \nonumber
-            & x \geq 0, \nonumber
-\end{eqnarray}
-onde $A \in \Rmn$, $b \in \Rm$ and $c \in \Rn$.
-Referenciando a equação ~(\ref{pp}) 
-
-\subsection{Sistema linear}
-
-\begin{equation}
- \left[
-\begin{array}{ccc}
- A & 0   & 0 \\
- 0 & A^T & I\\
- Z & 0   & X
-\end{array} \right]
-\left[
-\begin{array}{c}
- x \\
- y \\
- z \\
-\end{array}
-\right]
-=
-\left[
-\begin{array}{c}
- 1 \\
- 2 \\
- 3
-\end{array}
-\right]
-\label{eqpc0}
-\end{equation} 
-
-
-
-
-\[
-d_i=\left \{
-\begin{array}{cc}
-1 & \mbox{se } i=0 \\
-2 & \mbox{caso contrário}\\
-\end{array}
-\right \}
-\]
-
-
-
-
-%inicia uma nova página
 \clearpage
-
-\section{Tabelas}
-\label{sec:tab}
-
-
-\subsection{Tabela Simples}
-\begin{table}[htb]
-\begin{center}
-		\begin{tabular}{|c|c|c|}\hline
-		12  & 13 & 14 \\\hline
-		15  & 16 & 17 \\\hline
-		\end{tabular}
-\label{tab:Tabela1}
-\caption{Título da tabela}
-\end{center}
-\end{table}
-
-
-\subsection{Tabela mais elaborada}
-\begin{table}[htb]
-\begin{center}
-\begin{tabular}{|l|r|c|r|r|} \hline
-            & \multicolumn{2}{|c|}{{CCF preconditioner}} & \multicolumn{2}{|c|}{{Number of nonzeros}} \\ \cline{2-5}
-{Problem}   & \multicolumn{1}{|c|}{$\eta$}  & \multicolumn{1}{|c|}{$ \frac{n(AD^{-1}A^T)}{nrow}$} & \multicolumn{1}{|c|}{FCC} & \multicolumn{1}{|c|}{Cholesky}  \\ \hline \hline
-ELS-19    &  -11 & 31 &  87750  & 3763686  \\\hline 
-SCR20     &  -12 & 31 &  103179 & 2591752  \\\hline
-NUG15     &  -12 & 32 &  54786  & 6350444 \\\hline
-PDS-20    &   15 & 5  &  625519 & 7123636\\\hline
-\end{tabular}
-\caption{Título da Tabela.}   
-\label{tabn}
-\end{center}
-\end{table}
-
-Referenciando a tabela~\ref{tabn}. 
-
-
-
-
-
-\section{Edição}
-
-Comando para preservar a formatação do texto.
-\begin{verbatim}
-#include <iostream>         // < > is used for standard libraries.
-void main(void)             // ''main'' method always called first.
-{
- cout << ''This is a message.'';
-                            // Send to output stream.
-}
-\end{verbatim}
-
-\section{Inserir figuras}
-
-\begin{figure}[htb]
-	\centering
-		\includegraphics[height=14cm]{figura}
-	\label{fig:pdsmodel}
-\end{figure}
-
-%\clearpage %começa nova página
-
-
-Para citar referências bibliográficas~\cite{Adler89}, \cite{Carmo05}.
-
-
-
-\section{Conclusões} 
-Apresentar as conclusões finais.
-
 \vspace{5mm}
-{\bf{Agradecimentos}} Agradecimentos aos colaboradores, professores que eventualmente vocês procuraram para ajudar em 
-algum aspecto do modelo de vocês, colega que ajudou a compor alguma parte do trabalho e assim por diante.
+{\bf{Agradecimentos}} Agradecimentos ao Prof. Dr. Alexandre Roma
 
 %Incluindo referências bibliográficas
 \bibliographystyle{plain} %define o estilo         
 \bibliography{bibliografia} %busca o arquivo
+~\cite{a}, \cite{b}, \cite{c}, \cite{d}, \cite{e}.
 
+\clearpage
 % aqui, viriam os apêndices se viessem (fica como atividade descobrir como introduzí-los
+\section{Apêndice}
+  \subsection {Definição Spline}
+  Dada uma função f definida em [a, b] e um conjunto de nós $a = x0 < x1 < ... < xn = b$, um spline cúbico interpolador S para f é uma função que satisfaz as seguintes condições:
+
+  \item $S(x)$ é um polinômio cúbico, indicado por $S_j(x)$, no subintervalo $[xj, x_{\text{j+1}}]$ para cada $j = 0, 1, ..., n-1$;
+  \item $S(x_j) = f(x_j)$ para cada $j = 0, 1, ..., n-2$;
+  \item $S_{\text{j+1}}(x_{\text{j+1}}) = S_jj(x_{\text{j+1}})$ para cada $j = 0, 1, ..., n-2$;
+  \item $S'_{\text{j+1}}(x_{\text{j+1}})$ = $S'j(x_{\text{j+1}})$ para cada $j = 0, 1, ..., n-2$;
+  \item $S''_{\text{j+1}}(x_{\text{j+1}})$ = $S''_j(x_{\text{j+1}})$ para cada $j = 0, 1, ..., n-2$;
+  \item Um dos seguintes conjuntos de condições de contorno é satisfeito:
+    \subitem $S''(x_0) = S''(x_n) = 0$ (contorno livre ou natural);
+    \subitem $S'(x_0) = f'(x_0)$ e $S'(x_n) = f'(x_n)$ (contorno restrito).
+
+  Este trabalho utiliza a condição livre, ou seja, o método do Spline Cúbico Natural. O polinômio gerado tem a forma
+
+  $S(x) = S_j(x) = a_j + b_j(x - x_j) + c_j(x - x_j)2 + d_j(x - x_j)3$
+
+  Para a montagem do gráfico na parte de análise de resultados por Spline, utilizamos a função "splin"  do SciLab, cujo algoritmo é fechado ao uso do software. 
+
+  A fim de propor uma melhor explicação da utilização do método, um algoritmo alternativo (adaptado do arquivo fonte de Matlab) encontra-se abaixo com comentários em cada etapa importante.
+
+  \subsection {Algoritmo Spline Cúbico}
+  \input {algoritmo_spline}
+
+
 
 \end{document} %finaliza o documento
