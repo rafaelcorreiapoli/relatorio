@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.4)  4 APR 2016 22:54
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.4)  4 APR 2016 23:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,17 +369,17 @@ Package pdftex.def Info: poli.jpg used on input line 24.
 
 ]
 (./Modelo_relatorio.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 6.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -394,7 +394,13 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
- [1] [2] [3]
+ [1]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 102.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [2] [3] [4]
 \openout2 = `tabela_euler.aux'.
 
 
@@ -431,90 +437,196 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 187.
 
-) [4] [5] [6] [7] <images/0-t-1.png, id=51, 612.2875pt x 461.725pt>
+) [5] [6] [7] [8] <images/0-t-1.png, id=55, 612.2875pt x 461.725pt>
 File: images/0-t-1.png Graphic file (type png)
 
 <use images/0-t-1.png>
-Package pdftex.def Info: images/0-t-1.png used on input line 155.
+Package pdftex.def Info: images/0-t-1.png used on input line 196.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
- <images/0-t-2.png, id=53, 612.2875pt x 461.725pt>
+ <images/0-t-2.png, id=57, 612.2875pt x 461.725pt>
 File: images/0-t-2.png Graphic file (type png)
 
 <use images/0-t-2.png>
-Package pdftex.def Info: images/0-t-2.png used on input line 158.
+Package pdftex.def Info: images/0-t-2.png used on input line 199.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
- [8
+ [9
 
 
  <./images/0-t-1.png> <./images/0-t-2.png>]
-<images/0-t-4.png, id=59, 612.2875pt x 461.725pt>
+<images/0-t-4.png, id=63, 612.2875pt x 461.725pt>
 File: images/0-t-4.png Graphic file (type png)
  <use images/0-t-4.png>
-Package pdftex.def Info: images/0-t-4.png used on input line 161.
+Package pdftex.def Info: images/0-t-4.png used on input line 202.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
 
-<images/0-t-8.png, id=60, 612.2875pt x 461.725pt>
+<images/0-t-8.png, id=64, 612.2875pt x 461.725pt>
 File: images/0-t-8.png Graphic file (type png)
  <use images/0-t-8.png>
-Package pdftex.def Info: images/0-t-8.png used on input line 164.
+Package pdftex.def Info: images/0-t-8.png used on input line 205.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
 
-<images/0-t-16.png, id=61, 612.2875pt x 461.725pt>
+<images/0-t-16.png, id=65, 612.2875pt x 461.725pt>
 File: images/0-t-16.png Graphic file (type png)
  <use images/0-t-16.png>
-Package pdftex.def Info: images/0-t-16.png used on input line 167.
+Package pdftex.def Info: images/0-t-16.png used on input line 208.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
 
-[9 <./images/0-t-4.png> <./images/0-t-8.png> <./images/0-t-16.png>]
-<images/0-t-32.png, id=68, 612.2875pt x 461.725pt>
+[10 <./images/0-t-4.png> <./images/0-t-8.png> <./images/0-t-16.png>]
+<images/0-t-32.png, id=72, 612.2875pt x 461.725pt>
 File: images/0-t-32.png Graphic file (type png)
  <use images/0-t-32.png>
-Package pdftex.def Info: images/0-t-32.png used on input line 170.
+Package pdftex.def Info: images/0-t-32.png used on input line 211.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
 
-<images/0-t-64.png, id=69, 612.2875pt x 461.725pt>
+<images/0-t-64.png, id=73, 612.2875pt x 461.725pt>
 File: images/0-t-64.png Graphic file (type png)
  <use images/0-t-64.png>
-Package pdftex.def Info: images/0-t-64.png used on input line 173.
+Package pdftex.def Info: images/0-t-64.png used on input line 214.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
 
-<images/0-t-128.png, id=70, 612.2875pt x 461.725pt>
+<images/0-t-128.png, id=74, 612.2875pt x 461.725pt>
 File: images/0-t-128.png Graphic file (type png)
  <use images/0-t-128.png>
-Package pdftex.def Info: images/0-t-128.png used on input line 176.
+Package pdftex.def Info: images/0-t-128.png used on input line 217.
 (pdftex.def)             Requested size: 244.91066pt x 184.68672pt.
 
-[10 <./images/0-t-32.png> <./images/0-t-64.png> <./images/0-t-128.png>]
-[11] [12]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 305.
+[11 <./images/0-t-32.png> <./images/0-t-64.png> <./images/0-t-128.png>]
+[12] (./algoritmo_spline.tex
+Overfull \hbox (111.67586pt too wide) in paragraph at lines 167--167
+ []    \T1/cmtt/m/n/10.95 Spline spl(nPontos); //declaracao e passagem de param
+etro para construtor da Classe Spline.[] 
+ []
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-<figura.pdf, id=86, 614.295pt x 794.97pt>
+
+Overfull \hbox (66.40889pt too wide) in paragraph at lines 167--167
+ []    \T1/cmtt/m/n/10.95 spl.leituraPontos(); //Le do arquivo pontos.txt, os p
+ontos que serÿo interpolados.[] 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 167
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 167.
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead on input line 167.
+
+
+Overfull \hbox (122.9926pt too wide) in paragraph at lines 167--167
+ []    \T1/cmtt/m/n/10.95 spl.preparandoThomas(); // prepara o sistema e utiliz
+a o algoritmo de thomas pra resolver-lo.[] 
+ []
+
+
+Overfull \hbox (122.9926pt too wide) in paragraph at lines 167--167
+ []    \T1/cmtt/m/n/10.95 spl.saidaSpline(); // saida na tela e em arquivo .txt
+, dos coeficientes das do spline Cubico.[] 
+ []
+
+
+Overfull \hbox (66.40889pt too wide) in paragraph at lines 167--167
+ []    \T1/cmtt/m/n/10.95 spl.splineCubicoGNU(); // gera um arquivo .gnu para d
+esenhar o grýfico da solucao.[] 
+ []
+
+[13]
+Overfull \hbox (43.7754pt too wide) in paragraph at lines 167--167
+ []      \T1/cmtt/m/n/10.95 //* Metodos usados para resolver o Sistema Linear, 
+usando algorimto de Thomas[] 
+ []
+
+
+Overfull \hbox (100.35912pt too wide) in paragraph at lines 167--167
+ []      \T1/cmtt/m/n/10.95 void algoritmoThomas(double *A,double *B, double *C
+, double *D, double *X, long int N);[] 
+ []
+
+[14]
+Overfull \hbox (128.65097pt too wide) in paragraph at lines 167--167
+ []   \T1/cmtt/m/n/10.95 n = ns - 1;  // sao ns pontos(qntdade de pontos), mas 
+a referencia sera de ns-1 para os metodos[] 
+ []
+
+
+Overfull \hbox (4.16681pt too wide) in paragraph at lines 167--167
+ []   \T1/cmtt/m/n/10.95 y = new double[n+1];  // vetor y, armazena os valores 
+do eixo y, os f(x).[] 
+ []
+
+
+Overfull \hbox (4.16681pt too wide) in paragraph at lines 167--167
+ []   \T1/cmtt/m/n/10.95 h = new double[n+1];  // vetor h, que armazena os espa
+ßos entres os x's.[] 
+ []
+
+
+Overfull \hbox (173.91794pt too wide) in paragraph at lines 167--167
+ []   \T1/cmtt/m/n/10.95 a = new double[n+1];  // equivale aos f(x), aj = f(xj)
+, sao termos independentes dos polinomios gerados[] 
+ []
+
+
+Overfull \hbox (49.43378pt too wide) in paragraph at lines 167--167
+ []   \T1/cmtt/m/n/10.95 b = new double[n+1];  // sao os valores que multiplica
+m o termo linear, bj*(x-xj)[] 
+ []
+
+
+Overfull \hbox (83.384pt too wide) in paragraph at lines 167--167
+ []   \T1/cmtt/m/n/10.95 c = new double[n+1];  // sao os valores que multiplica
+m o termo quadratico, cj*(x-xj)^2[] 
+ []
+
+
+Overfull \hbox (60.75052pt too wide) in paragraph at lines 167--167
+ []   \T1/cmtt/m/n/10.95 d = new double[n+1];  // sao os valores que multiplica
+m o termo cubico, dj*(x-xj)^3[] 
+ []
+
+
+Overfull \hbox (49.43378pt too wide) in paragraph at lines 167--167
+ []   \T1/cmtt/m/n/10.95 // Sao variaveis auxiliares usadas no algoritmo 1, par
+a resolver o sistema linear[] 
+ []
+
+
+Overfull \hbox (77.72563pt too wide) in paragraph at lines 167--167
+ []     \T1/cmtt/m/n/10.95 ifstream arq("pontos.txt");  //Leitura dos pontos do
+ problema, no arquivo pontos.txt[] 
+ []
+
+[15]
+Overfull \hbox (9.82518pt too wide) in paragraph at lines 167--167
+ []         \T1/cmtt/m/n/10.95 alfa[i] = (3.0/h[i])*(a[i+1] - a[i]) - (3.0/h[i-
+1])*(a[i] - a[i-1]);[] 
+ []
+
+[16]) [17] [18] <figura.pdf, id=106, 614.295pt x 794.97pt>
 File: figura.pdf Graphic file (type pdf)
  <use figura.pdf>
-Package pdftex.def Info: figura.pdf used on input line 318.
+Package pdftex.def Info: figura.pdf used on input line 387.
 (pdftex.def)             Requested size: 307.81224pt x 398.33858pt.
- [13
 
-]
-(./Modelo_relatorio.bbl [14 <./figura.pdf>]) [15] (./Modelo_relatorio.aux
+[19
+
+] (./Modelo_relatorio.bbl [20 <./figura.pdf>]) [21] (./Modelo_relatorio.aux
 (./capa2.aux) (./tabela_euler.aux))
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3850 strings out of 495004
- 50857 string characters out of 6180663
+ 3867 strings out of 495004
+ 51093 string characters out of 6180663
  140056 words of memory out of 5000000
- 6940 multiletter control sequences out of 15000+600000
+ 6952 multiletter control sequences out of 15000+600000
  18970 words of font info for 54 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 38i,12n,24p,252b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/rafa93br/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </hom
-e/rafa93br/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/rafa93
+ 38i,12n,24p,321b,286s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/rafa93br/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </hom
+e/rafa93br/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/rafa93
 br/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/rafa93br/.texm
 f-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/rafa93br/.texmf-var/fo
 nts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/rafa93br/.texmf-var/fonts/pk/l
@@ -534,10 +646,10 @@ fonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Modelo_relatorio.pdf (17 pages, 451083 bytes).
+Output written on Modelo_relatorio.pdf (23 pages, 480717 bytes).
 PDF statistics:
- 559 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
+ 645 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

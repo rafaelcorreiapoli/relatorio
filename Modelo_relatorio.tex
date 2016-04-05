@@ -81,17 +81,55 @@ usuários de Windows. Eu uso o {\it Kile}. O para windows eu não conheço. Consta 
 
 \section{EDOs e Condições Inicias}
 
-\section{Metodologias}
+\textbf{Apresentação das equações envolvidas:} 
 
+
+$\frac{dx}{dt}  = \sigma (y - x)$
+
+$\frac{dy}{dt} = x (\rho - z) - y$
+
+$\frac{dz}{dt}  = xy - \beta z$
+
+em que a $\sigma$ se chama o número de Prandtl e a $\rho$ se chama o número de Rayleigh. 
+
+Todos os $\sigma, \rho, \beta > 0$, mas usualmente $\sigma = 10$, $\beta = \frac{8}{3}$, enquanto $\rho$ varia. 
+
+O sistema exibe comportamento caótico para $\rho = 28$ mas tem órbitas periódicas para outros valores de $\rho$.
+
+\section{Metodologias}
+  \subsection{Euler}
+    \subsubsection{Algoritmo}
+      \begin{verbatim}
+	for i=1:n-1
+	    t(i,:)=h*i
+	    x(i+1,:) = y(i,:)+dxdt (t(i,:),x(i,:),y(i,:),z(i,:))*h 
+	    y(i+1,:) = y(i,:)+dydt (t(i,:),x(i,:),y(i,:),z(i,:))*h 
+	    z(i+1,:) = z(i,:)+dzdt (t(i,:),x(i,:),y(i,:),z(i,:))*h 
+	end       
+      \end{verbatim}
+    \subsubsection{Discretização}
+    
+  \subsection{Runge-Kutta}
+    \subsubsection{Algoritmo}
+      \begin{verbatim}
+	for i=1:n-1
+	k1 = dydt (t(i),y(i,:))
+	ymid = y(i,:) + k1(h/2)
+	k2 = dydt (t(i)+(h/2),ymid)
+	ymid = y(i,:) + k2(h/2)
+	k3 = dydt(t(i) + (h/2),ymid)
+	yend = y(i,:) + k3h
+	k4 = dydt(t(i)+h,yend) //como podemos perceber, o método eh de QUARTA ORDEM
+	phi = (1/6)(k1+2k2+2k3+k4)
+	y(i+1,:) = y(i,:)+phi*h       
+      \end{verbatim}
+
+    \subsubsection{Discretização}    
+
+  
 
 % Parte 4
 \section{Análise}
-A seguir apresentaremos os gráficos obtidos a partir da resolução das equações diferenciais pelas metodologias aprensentadas no item anterior.
-
-É importante notar que apresentamos apenas um gráfico para cada intervalo de tempo (apesar de termos duas metodologias) pois os resultados foram extremamente parecidos.
-
-
-      
 \subsection {Euler}
   \subsubsection {Equações}
     \textbf{Equações Euler}
@@ -151,6 +189,9 @@ A seguir apresentaremos os gráficos obtidos a partir da resolução das equações d
   
 
 \subsection {Gráficos}
+  A seguir apresentaremos os gráficos obtidos a partir da resolução das equações diferenciais pelas metodologias aprensentadas no item anterior.
+
+  É importante notar que apresentamos apenas um gráfico para cada intervalo de tempo (apesar de termos duas metodologias) pois os resultados foram extremamente parecidos.
 		  \textbf{$0 < t < 1$}\par\medskip
 		  \includegraphics[scale=0.4]{images/0-t-1}
 
@@ -179,10 +220,38 @@ A seguir apresentaremos os gráficos obtidos a partir da resolução das equações d
 
 
 \section{Conclusão}
+O escopo deste trabalho consistiu na resolução das três equações diferenciais de Lorentz através de métodos numéricos aprendidos na disciplina. 
 
+Para tanto, utilizamos o método de Euler explícito pela sua facilidade do algoritmo e pela obtenção de uma boa aproximação inicial, na qual podemos comparar com o gráfico da solução manufaturada. 
+
+Em seguida, implementamos o método de Runge-Kutta Clássico, e já observamos uma aproximação muito mais consistente e próxima do esperado, já que este possui convergência de quarta ordem. 
+
+
+O estudo destas equações, além de ter despertado o interesse na aplicação de métodos numéricos para sua resolução, tem forte aplicação em diversas áreas no estudo da teoria do caos como mencionado anteriormente, apesar do modelo ser derivado de uma simplificação de equações mais complexas.
 
 \section{Apêndice}
+  \subsection {Definição Spline}
+  Dada uma função f definida em [a, b] e um conjunto de nós $a = x0 < x1 < ... < xn = b$, um spline cúbico interpolador S para f é uma função que satisfaz as seguintes condições:
 
+  \item $S(x)$ é um polinômio cúbico, indicado por $S_j(x)$, no subintervalo $[xj, x_{\text{j+1}}]$ para cada $j = 0, 1, ..., n-1$;
+  \item $S(x_j) = f(x_j)$ para cada $j = 0, 1, ..., n-2$;
+  \item $S_{\text{j+1}}(x_{\text{j+1}}) = S_jj(x_{\text{j+1}})$ para cada $j = 0, 1, ..., n-2$;
+  \item $S'_{\text{j+1}}(x_{\text{j+1}})$ = $S'j(x_{\text{j+1}})$ para cada $j = 0, 1, ..., n-2$;
+  \item $S''_{\text{j+1}}(x_{\text{j+1}})$ = $S''_j(x_{\text{j+1}})$ para cada $j = 0, 1, ..., n-2$;
+  \item Um dos seguintes conjuntos de condições de contorno é satisfeito:
+    \subitem $S''(x_0) = S''(x_n) = 0$ (contorno livre ou natural);
+    \subitem $S'(x_0) = f'(x_0)$ e $S'(x_n) = f'(x_n)$ (contorno restrito).
+
+  Este trabalho utiliza a condição livre, ou seja, o método do Spline Cúbico Natural. O polinômio gerado tem a forma
+
+  $S(x) = S_j(x) = a_j + b_j(x - x_j) + c_j(x - x_j)2 + d_j(x - x_j)3$
+
+  Para a montagem do gráfico na parte de análise de resultados por Spline, utilizamos a função "splin"  do SciLab, cujo algoritmo é fechado ao uso do software. 
+
+  A fim de propor uma melhor explicação da utilização do método, um algoritmo alternativo (adaptado do arquivo fonte de Matlab) encontra-se abaixo com comentários em cada etapa importante.
+
+  \subsection {Algoritmo Spline Cúbico}
+  \input {algoritmo_spline}
 
 \section{Exemplos de Equações}
 Nesta seção serão apresentados diferentes exemplos de equações.
