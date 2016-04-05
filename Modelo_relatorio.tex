@@ -39,7 +39,10 @@
 
 
 \pagestyle {empty}
-\abstract{Este trabalho tem sua motivação analisar o comportamento das soluções das equações de Lorenz (E. N. Lorenz, Journal of Atmospheric Sciences, 1963) através dos conhecimentos adquiridos na disciplina MAP3122 - MÉTODOS NUMÉRICOS E APLICAÇÕES, lecionada pelo prof. dr. Alexandre Roma na Escola Politécnica da USP em 2016. Vamos utilizar dois métodos de aproximação numérica (Euler explícito e Runge-Kutta Clássico), bem como a construção de um gráfico pelo método de Spline Cúbica, obtido pela construção das tabelas para a avaliação dos resultados.}
+\abstract{Este trabalho tem sua motivação analisar o comportamento das soluções das equações de Lorenz (E. N. Lorenz, Journal of Atmospheric Sciences, 1963) através dos conhecimentos adquiridos na disciplina MAP3122 - MÉTODOS NUMÉRICOS E APLICAÇÕES, lecionada pelo prof. dr. Alexandre Roma na Escola Politécnica da USP em 2016. Vamos utilizar dois métodos de aproximação numérica (Euler explícito e Runge-Kutta Clássico), bem como a construção de um gráfico pelo método de Spline Cúbica, obtido pela construção das tabelas para a avaliação dos resultados.
+
+\textbf{PALAVRAS CHAVE:} Efeito Borboleta, Atrator de Lorentz, Método de Euler Explícito, Método de Runge-Kutta Clássico, Spline Cúbica
+}
 
 \newpage
 
@@ -113,6 +116,12 @@ $y_0 = 0$
 
 $z_0 = 10$
 
+As condições iniciais são arbitrárias e foram escolhidas para o estudo do efeito caótico.
+
+No caso, para demonstrar o efeito caótico, basta que um dos termos deve ser diferente dos demais.
+
+Para condicoes iniciais nulas, $x_0 = 0$, $y_0 = 0$, $z_0 = 0$, o sistema permanece em repouso.
+
 \section{Metodologias}
   \subsection{Euler}
     \subsubsection{Algoritmo}
@@ -127,47 +136,22 @@ $z_0 = 10$
     \subsubsection{Discretização}
      $\Delta t = \frac{t_f - t_i}{n} = h$
      
-  \subsection{Runge-Kutta}
-    \subsubsection{Algoritmo}
-      \begin{verbatim}
-	for i=1:n-1
-	  k1 = dydt (t(i),y(i,:))
-	  ymid = y(i,:) + k1(h/2)
-	  k2 = dydt (t(i)+(h/2),ymid)
-	  ymid = y(i,:) + k2(h/2)
-	  k3 = dydt(t(i) + (h/2),ymid)
-	  yend = y(i,:) + k3h
-	  k4 = dydt(t(i)+h,yend) //como podemos perceber, o método eh de QUARTA ORDEM
-	  phi = (1/6)(k1+2k2+2k3+k4)
-	  y(i+1,:) = y(i,:)+phi*h
-	end
-      \end{verbatim}
+      \textbf{Equações Euler}
 
-    \subsubsection{Discretização}    
+      $\frac{dx}{dt}  = -10x + 10y$
 
-  
+      $\frac{dy}{dt} = 28x - y - xz$
 
-% Parte 4
-\section{Análise}
-\subsection {Euler}
-  \subsubsection {Equações}
-    \textbf{Equações Euler}
-
-    $\frac{dx}{dt}  = -10x + 10y$
-
-    $\frac{dy}{dt} = 28x - y - xz$
-
-    $\frac{dz}{dt}  = xy - \frac{8}{3}z$
+      $\frac{dz}{dt}  = xy - \frac{8}{3}z$
 
 
-    \textbf{Aplicando nas equações}
+      \textbf{Aplicando nas equações}
 
-    $x_{\text{k+1}} = x_k + h(-10x_k + 10y_k)$
+      $x_{\text{k+1}} = x_k + h(-10x_k + 10y_k)$
 
-    $y_{\text{k+1}} = x_k + h(28x_k - y_k - x_kz_k)$
+      $y_{\text{k+1}} = x_k + h(28x_k - y_k - x_kz_k)$
 
-    $z_{\text{k+1}} = z_k + h(x_ky_k - \frac{8}{3}y_k)$
-
+      $z_{\text{k+1}} = z_k + h(x_ky_k - \frac{8}{3}y_k)$
 
     \textbf{Matriz}
     \begin{equation}
@@ -193,18 +177,67 @@ $z_0 = 10$
       hy & -\frac{8}{3}h & 1
       \end{array} \right]
       \label{eqpc0}
-    \end{equation} 
-    
-  \textbf{Solução Manufaturada}
+    \end{equation}      
+     
+  \subsection{Runge-Kutta}
+    \subsubsection{Algoritmo}
+      \begin{verbatim}
+	for i=1:n-1
+	  k1 = dydt (t(i),y(i,:))
+	  ymid = y(i,:) + k1(h/2)
+	  k2 = dydt (t(i)+(h/2),ymid)
+	  ymid = y(i,:) + k2(h/2)
+	  k3 = dydt(t(i) + (h/2),ymid)
+	  yend = y(i,:) + k3h
+	  k4 = dydt(t(i)+h,yend) //como podemos perceber, o método eh de QUARTA ORDEM
+	  phi = (1/6)(k1+2k2+2k3+k4)
+	  y(i+1,:) = y(i,:)+phi*h
+	end
+      \end{verbatim}
+
+    \subsubsection{Discretização}    
+      $\Delta t = \frac{t_f - t_i}{n} = h$
+      
+      $k_1 = hf(y_i, y_i)$
+      
+      $k_2 = hf(t_i + \frac{h}{2}, y_i + \frac{k_1}{2}$
+      
+      $k_3 = hf(t_i + \frac{h}{2}, y_i + \frac{k_2}{2}$
+      
+      $k_4 = hf(t_i + h, y_i + k+3)$
+      
+      $y_{\text{i+1}} = y_i + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k4)$
+   
+   \subsection{Solução Manufaturada}
+    Utilizando Euler, obtemos o gráfico abaixo, com $h= \frac{1}{4}$
+    		  \textbf{Gráfico de (x,t)}\par\medskip
+		  \includegraphics[scale=0.4]{images/manu-euler}
   
+    \item Vermelho: Aproximação RK
+    \item Azul: Solução Manufaturada
+    
+    Temos que a ordem de convergência do método de Euler Explícito é 1
+    
+    Utilizando RK clássico, obtemos o gráfico abaixo, com $h= \frac{1}{4}$
+    		  \textbf{Gráfico de (x,t)}\par\medskip
+		  \includegraphics[scale=0.4]{images/manu-rk}
+    O qual já é próximo ao esperado.
+    
+    Temos que a ordem de convergência do método de Runge-Kutta Clássico é 4
+		  
+		  
+% Parte 4
+\section{Análise}
+\subsection {Euler}
+  \subsubsection {Tabela}
+     \include{tabela_euler}
+     
+  \subsubsection {Solução Manufaturada}
     $x(t) = -\frac{y}{10} e^(-10t) + \frac{y}{10}$
     
     $y(t) = (-28x + xz)e^(-t) + 28x -xz$
     
-    $z(t) = 10 + xyt - \frac{8}{3}y*t$
-    
-  \subsubsection {Tabela}
-     \include{tabela_euler}
+    $z(t) = 10 + xyt - \frac{8}{3}y*t$     
 
 \subsection{Runge-Kutta}
   \subsubsection{Equações}
@@ -265,6 +298,7 @@ Em seguida, implementamos o método de Runge-Kutta Clássico, e já observamos uma 
 
 
 O estudo destas equações, além de ter despertado o interesse na aplicação de métodos numéricos para sua resolução, tem forte aplicação em diversas áreas no estudo da teoria do caos como mencionado anteriormente, apesar do modelo ser derivado de uma simplificação de equações mais complexas.
+
 
 \clearpage
 \vspace{5mm}
