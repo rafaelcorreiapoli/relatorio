@@ -64,6 +64,8 @@
 % Espaçamento entre parágrafos
 \parskip 5pt  
 
+\clearpage
+
 \section{Introdução}
 
 Lorenz estava questionando a fundamentação teórica dos métodos de previsão do tempo da época, baseados em regressão linear. Na sua opinião o fenômeno do tempo é demasiado não linear para que tais métodos possam dar resultados consistentes. Para testar a sua tese, comparou numericamente diversos métodos aplicados a certos modelos simplificados.
@@ -115,7 +117,8 @@ O sistema exibe comportamento caótico para $\rho = 28$ mas tem órbitas periódica
 	end       
       \end{verbatim}
     \subsubsection{Discretização}
-    
+     $\Delta t = \frac{t_f - t_i}{n} = h$
+     
   \subsection{Runge-Kutta}
     \subsubsection{Algoritmo}
       \begin{verbatim}
@@ -148,9 +151,6 @@ O sistema exibe comportamento caótico para $\rho = 28$ mas tem órbitas periódica
 
     $\frac{dz}{dt}  = xy - \frac{8}{3}z$
 
-    \textbf{Discretização Euler}
-
-    $\Delta t = \frac{t_f - t_i}{n}$
 
     \textbf{Aplicando nas equações}
 
@@ -188,7 +188,7 @@ O sistema exibe comportamento caótico para $\rho = 28$ mas tem órbitas periódica
     \end{equation} 
 
   \subsubsection {Tabela}
-     \include {tabela_euler}
+     \include{tabela_euler}
 
 \subsection{Runge-Kutta}
   \subsubsection{Equações}
@@ -197,9 +197,9 @@ O sistema exibe comportamento caótico para $\rho = 28$ mas tem órbitas periódica
   
 
 \subsection {Gráficos}
-  A seguir apresentaremos os gráficos obtidos a partir da resolução das equações diferenciais pelas metodologias aprensentadas no item anterior.
+  A seguir apresentaremos os gráficos obtidos a partir da resolução das equações diferenciais pelas metodologias apresentadas no item anterior.
 
-  É importante notar que apresentamos apenas um gráfico para cada intervalo de tempo (apesar de termos duas metodologias) pois os resultados foram extremamente parecidos.
+  É importante notar que apresentaremos apenas um gráfico para cada intervalo de tempo (apesar de termos duas metodologias) pois os resultados foram extremamente parecidos.
 		  \textbf{$0 < t < 1$}\par\medskip
 		  \includegraphics[scale=0.4]{images/0-t-1}
 
@@ -227,7 +227,10 @@ O sistema exibe comportamento caótico para $\rho = 28$ mas tem órbitas periódica
 \section{Spline}
 
 
-\section{Conclusão}
+
+
+\clearpage
+\section{Conclusões} 
 O escopo deste trabalho consistiu na resolução das três equações diferenciais de Lorentz através de métodos numéricos aprendidos na disciplina. 
 
 Para tanto, utilizamos o método de Euler explícito pela sua facilidade do algoritmo e pela obtenção de uma boa aproximação inicial, na qual podemos comparar com o gráfico da solução manufaturada. 
@@ -237,6 +240,17 @@ Em seguida, implementamos o método de Runge-Kutta Clássico, e já observamos uma 
 
 O estudo destas equações, além de ter despertado o interesse na aplicação de métodos numéricos para sua resolução, tem forte aplicação em diversas áreas no estudo da teoria do caos como mencionado anteriormente, apesar do modelo ser derivado de uma simplificação de equações mais complexas.
 
+\clearpage
+\vspace{5mm}
+{\bf{Agradecimentos}} Agradecimentos ao Prof. Dr. Alexandre Roma
+
+%Incluindo referências bibliográficas
+\bibliographystyle{plain} %define o estilo         
+\bibliography{bibliografia} %busca o arquivo
+~\cite{a}, \cite{b}, \cite{c}, \cite{d}, \cite{e}.
+
+\clearpage
+% aqui, viriam os apêndices se viessem (fica como atividade descobrir como introduzí-los
 \section{Apêndice}
   \subsection {Definição Spline}
   Dada uma função f definida em [a, b] e um conjunto de nós $a = x0 < x1 < ... < xn = b$, um spline cúbico interpolador S para f é uma função que satisfaz as seguintes condições:
@@ -261,159 +275,6 @@ O estudo destas equações, além de ter despertado o interesse na aplicação de mét
   \subsection {Algoritmo Spline Cúbico}
   \input {algoritmo_spline}
 
-\section{Exemplos de Equações}
-Nesta seção serão apresentados diferentes exemplos de equações.
 
-\subsection{Equações simples}
-
-\textbf{Sem numeração}
-\[\sum_{i=1}^{100}\frac{2^{i-1}}{4}\]
-
-
-	
-
-\textbf{Com numeração}
-\begin{equation}
-	\int_{0}^{100}\sqrt[4]{\frac{2n}{7}}
-\end{equation}
-
-\begin{equation}
-M^{-1}(AD^{-1}A^T)M^{-T}\bar{y} = M^{-1}(AD^{-1}(r_d -X^{-1}r_a) + r_p),
-\end{equation}
-
-
-\subsection{Equações com mais de uma linha}
-\begin{eqnarray}
-\label{pp} %faz um rótulo na equação. Será usado para referenciá-la.
-\min & c^Tx \\ \nonumber
-\mbox{s.a.} & Ax=b \\ \nonumber
-            & x \geq 0, \nonumber
-\end{eqnarray}
-onde $A \in \Rmn$, $b \in \Rm$ and $c \in \Rn$.
-Referenciando a equação ~(\ref{pp}) 
-
-\subsection{Sistema linear}
-
-\begin{equation}
- \left[
-\begin{array}{ccc}
- A & 0   & 0 \\
- 0 & A^T & I\\
- Z & 0   & X
-\end{array} \right]
-\left[
-\begin{array}{c}
- x \\
- y \\
- z \\
-\end{array}
-\right]
-=
-\left[
-\begin{array}{c}
- 1 \\
- 2 \\
- 3
-\end{array}
-\right]
-\label{eqpc0}
-\end{equation} 
-
-
-
-
-\[
-d_i=\left \{
-\begin{array}{cc}
-1 & \mbox{se } i=0 \\
-2 & \mbox{caso contrário}\\
-\end{array}
-\right \}
-\]
-
-
-
-
-%inicia uma nova página
-\clearpage
-
-\section{Tabelas}
-\label{sec:tab}
-
-
-\subsection{Tabela Simples}
-\begin{table}[htb]
-\begin{center}
-		\begin{tabular}{|c|c|c|}\hline
-		12  & 13 & 14 \\\hline
-		15  & 16 & 17 \\\hline
-		\end{tabular}
-\label{tab:Tabela1}
-\caption{Título da tabela}
-\end{center}
-\end{table}
-
-
-\subsection{Tabela mais elaborada}
-\begin{table}[htb]
-\begin{center}
-\begin{tabular}{|l|r|c|r|r|} \hline
-            & \multicolumn{2}{|c|}{{CCF preconditioner}} & \multicolumn{2}{|c|}{{Number of nonzeros}} \\ \cline{2-5}
-{Problem}   & \multicolumn{1}{|c|}{$\eta$}  & \multicolumn{1}{|c|}{$ \frac{n(AD^{-1}A^T)}{nrow}$} & \multicolumn{1}{|c|}{FCC} & \multicolumn{1}{|c|}{Cholesky}  \\ \hline \hline
-ELS-19    &  -11 & 31 &  87750  & 3763686  \\\hline 
-SCR20     &  -12 & 31 &  103179 & 2591752  \\\hline
-NUG15     &  -12 & 32 &  54786  & 6350444 \\\hline
-PDS-20    &   15 & 5  &  625519 & 7123636\\\hline
-\end{tabular}
-\caption{Título da Tabela.}   
-\label{tabn}
-\end{center}
-\end{table}
-
-Referenciando a tabela~\ref{tabn}. 
-
-
-
-
-
-\section{Edição}
-
-Comando para preservar a formatação do texto.
-\begin{verbatim}
-#include <iostream>         // < > is used for standard libraries.
-void main(void)             // ''main'' method always called first.
-{
- cout << ''This is a message.'';
-                            // Send to output stream.
-}
-\end{verbatim}
-
-\section{Inserir figuras}
-
-\begin{figure}[htb]
-	\centering
-		\includegraphics[height=14cm]{figura}
-	\label{fig:pdsmodel}
-\end{figure}
-
-%\clearpage %começa nova página
-
-
-Para citar referências bibliográficas~\cite{a}, \cite{b}, \cite{c}, \cite{d}, \cite{e}.
-
-
-
-\section{Conclusões} 
-Apresentar as conclusões finais.
-
-\vspace{5mm}
-{\bf{Agradecimentos}} Agradecimentos aos colaboradores, professores que eventualmente vocês procuraram para ajudar em 
-algum aspecto do modelo de vocês, colega que ajudou a compor alguma parte do trabalho e assim por diante.
-
-%Incluindo referências bibliográficas
-\bibliographystyle{plain} %define o estilo         
-\bibliography{bibliografia} %busca o arquivo
-
-% aqui, viriam os apêndices se viessem (fica como atividade descobrir como introduzí-los
 
 \end{document} %finaliza o documento
